@@ -3,35 +3,35 @@
       "id": 1,
       "name":"Breville",
       "price":269,
-      "description":"...",
+      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"breville.png"
     },
     {
       "id": 2,
       "name":"Kups",
       "price":149,
-      "description":"...",
+      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"nesspresso-kups.png"
     },
     {
       "id": 3,
       "name":"Classic Breville",
       "price":269,
-      "description":"...",
+      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"breville.png"
     },
     {
       "id": 4,
       "name":"Classic Breville",
       "price":269,
-      "description":"...",
+      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"breville.png"
     },
     {
       "id": 5,
       "name":"Classic Breville",
       "price":269,
-      "description":"...",
+      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"breville.png"
     }
 ]

@@ -9,17 +9,10 @@ const Shop = () => {
   const [products, setProducts] = useState<ProductInterface[]>([]);
   const [cartProducts, setCartProducts] = useState<ProductInterface[]>([]);
 
-  const [modalOpen, setModalOpen] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState<ProductInterface>();
 
   useEffect(() => {
-    // Update the document title using the browser API
     getProducts();
-
-    const productToAdd = [...products].find((p) => p.id === 1);
-    if (productToAdd !== undefined) {
-      setSelectedProduct(productToAdd);
-    }
   }, []);
 
   const getProducts = async () => {
@@ -52,18 +45,29 @@ const Shop = () => {
     }
   };
 
+  const closeModal = () => {
+    setSelectedProduct(undefined);
+  };
+
   return (
-    <div className="shop">
-      <div className="nav">Navbar</div>
-      <Cart products={cartProducts}></Cart>
-      <div className="shop-title">Coffee Makers</div>
-      <ProductList
-        products={products}
-        onAddToCart={addProductToCart}
-        openProductModal={openProductModal}
-      ></ProductList>
-      {selectedProduct && (
-        <ProductModal product={selectedProduct}></ProductModal>
+    <div>
+      {selectedProduct ? (
+        <ProductModal
+          product={selectedProduct}
+          onAddToCart={addProductToCart}
+          closeModal={closeModal}
+        ></ProductModal>
+      ) : (
+        <div className="shop">
+          <div className="nav">Navbar</div>
+          <Cart products={cartProducts}></Cart>
+          <div className="shop-title">Coffee Makers</div>
+          <ProductList
+            products={products}
+            onAddToCart={addProductToCart}
+            openProductModal={openProductModal}
+          ></ProductList>{" "}
+        </div>
       )}
     </div>
   );
