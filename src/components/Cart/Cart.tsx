@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ProductInterface } from "../../types";
 import "./Cart.css";
-import { FaShoppingCart } from "react-icons/fa";
+import { BsFillHandbagFill } from "react-icons/bs";
 
 interface CartProps {
   products?: ProductInterface[];
@@ -11,8 +11,7 @@ const Cart: React.FC<CartProps> = ({ products }) => {
   products && products.map((product) => (total += product.price));
   return (
     <div>
-      <FaShoppingCart className="icon"></FaShoppingCart>
-      {total}
+      <BsFillHandbagFill className="icon"></BsFillHandbagFill>${total}.00
     </div>
   );
 };
