@@ -4,5 +4,6 @@ export interface ProductInterface {
   price: number;
   description: string;
   img: string;
-  onAddToCart: (id: number) => void;
+  onAddToCart?: (id: number) => void;
+  openProductModal?: (id: number) => void;
 }

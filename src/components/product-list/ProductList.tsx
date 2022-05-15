@@ -6,8 +6,13 @@ import Product from "../product/Product";
 interface ProductListProps {
   products: ProductInterface[];
   onAddToCart: (id: number) => void;
+  openProductModal: (id: number) => void;
 }
-const ProductList: React.FC<ProductListProps> = ({ products, onAddToCart }) => {
+const ProductList: React.FC<ProductListProps> = ({
+  products,
+  onAddToCart,
+  openProductModal,
+}) => {
   return (
     <div className="product-list">
       {products.map((product) => (
@@ -19,6 +24,7 @@ const ProductList: React.FC<ProductListProps> = ({ products, onAddToCart }) => {
           description={product.description}
           img={product.img}
           onAddToCart={onAddToCart}
+          openProductModal={openProductModal}
         ></Product>
       ))}
     </div>

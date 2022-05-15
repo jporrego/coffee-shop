@@ -3,14 +3,23 @@ import "./Shop.css";
 import { ProductInterface } from "../../types";
 import Cart from "../cart/Cart";
 import ProductList from "../product-list/ProductList";
+import ProductModal from "../product-modal/ProductModal";
 
 const Shop = () => {
   const [products, setProducts] = useState<ProductInterface[]>([]);
   const [cartProducts, setCartProducts] = useState<ProductInterface[]>([]);
 
+  const [modalOpen, setModalOpen] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState<ProductInterface>();
+
   useEffect(() => {
     // Update the document title using the browser API
     getProducts();
+
+    const productToAdd = [...products].find((p) => p.id === 1);
+    if (productToAdd !== undefined) {
+      setSelectedProduct(productToAdd);
+    }
   }, []);
 
   const getProducts = async () => {
@@ -23,14 +32,24 @@ const Shop = () => {
       });
       const data = await response.json();
       setProducts(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   const addProductToCart = (id: number) => {
-    const productToAdd = [...products].filter((p) => p.id === id)[0];
-    setCartProducts([...cartProducts, productToAdd]);
+    const productToAdd = [...products].find((p) => p.id === id);
+    if (productToAdd !== undefined) {
+      setCartProducts([...cartProducts, productToAdd]);
+    }
+  };
+
+  const openProductModal = (id: number) => {
+    const productToAdd = [...products].find((p) => p.id === id);
+    if (productToAdd !== undefined) {
+      setSelectedProduct(productToAdd);
+    }
   };
 
   return (
@@ -41,7 +60,11 @@ const Shop = () => {
       <ProductList
         products={products}
         onAddToCart={addProductToCart}
+        openProductModal={openProductModal}
       ></ProductList>
+      {selectedProduct && (
+        <ProductModal product={selectedProduct}></ProductModal>
+      )}
     </div>
   );
 };
