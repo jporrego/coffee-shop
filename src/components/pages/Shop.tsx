@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Shop.css";
-import Cart from "../Cart/Cart";
+import { ProductInterface } from "../../types";
+import Cart from "../cart/Cart";
 import ProductList from "../product-list/ProductList";
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductInterface[]>([]);
+  const [cartProducts, setCartProducts] = useState<ProductInterface[]>([]);
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -25,11 +27,21 @@ const Shop = () => {
       console.log(error);
     }
   };
+
+  const addProductToCart = (id: number) => {
+    const productToAdd = [...products].filter((p) => p.id === id)[0];
+    setCartProducts([...cartProducts, productToAdd]);
+  };
+
   return (
-    <div>
+    <div className="shop">
       <div className="nav">Navbar</div>
-      <Cart products={products}></Cart>
-      <ProductList products={products}></ProductList>
+      <Cart products={cartProducts}></Cart>
+      <div className="shop-title">Coffee Makers</div>
+      <ProductList
+        products={products}
+        onAddToCart={addProductToCart}
+      ></ProductList>
     </div>
   );
 };

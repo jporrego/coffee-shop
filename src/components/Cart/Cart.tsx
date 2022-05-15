@@ -1,13 +1,7 @@
 import React, { useState } from "react";
+import { ProductInterface } from "../../types";
 import "./Cart.css";
-
-interface ProductInterface {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  img?: string;
-}
+import { FaShoppingCart } from "react-icons/fa";
 
 interface CartProps {
   products?: ProductInterface[];
@@ -15,7 +9,12 @@ interface CartProps {
 const Cart: React.FC<CartProps> = ({ products }) => {
   let total = 0;
   products && products.map((product) => (total += product.price));
-  return <div>${total}</div>;
+  return (
+    <div>
+      <FaShoppingCart className="icon"></FaShoppingCart>
+      {total}
+    </div>
+  );
 };
 
 export default Cart;

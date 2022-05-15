@@ -1,19 +1,13 @@
 import React from "react";
 import "./ProductList.css";
+import { ProductInterface } from "../../types";
 import Product from "../product/Product";
-
-interface ProductInterface {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  img?: string;
-}
 
 interface ProductListProps {
   products: ProductInterface[];
+  onAddToCart: (id: number) => void;
 }
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList: React.FC<ProductListProps> = ({ products, onAddToCart }) => {
   return (
     <div className="product-list">
       {products.map((product) => (
@@ -24,6 +18,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
           price={product.price}
           description={product.description}
           img={product.img}
+          onAddToCart={onAddToCart}
         ></Product>
       ))}
     </div>

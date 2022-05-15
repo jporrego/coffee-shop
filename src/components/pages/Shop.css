@@ -1,0 +1,10 @@
+.shop {
+    padding: 1rem;
+}
+
+.shop-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 2rem 0rem;
+}
