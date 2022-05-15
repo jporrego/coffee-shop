@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --black: #292124;
+  --grey: #2f3138;
+  --white: #ffffff;
+  --blue: #6530D9;
+  --purple-dark: #753FBF;
+  --purple: #985EBF;
+  --purple-light: #BF7EAE;
+  --yellow: #F2A950;
+  --red: #e4544a;
+  --grey: #f6f4f5;
+  --brown: #ab7d6e;
+  --brown-light: #c48875;
+  /* Fonts */
+  --font-primary: 'Nunito', sans-serif;
+  /* Utilities */
+  --big-padding: 2rem;
+  --small-padding: 1rem;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.btn-round {
+  border-radius: 20rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  transition: all .1s ease-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-round:hover {
+  filter: brightness(1.1);
+}
+
+.btn-square {
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  padding: .4rem;
+  border-radius: .5rem;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  user-select: none;
+
+}
+
+.btn-square:hover {
+  transform: translateY(1px);
+}
+
+.btn--yellow {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.btn--red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn--purple {
+  background-color: var(--purple);
+  color: var(--white);
+}

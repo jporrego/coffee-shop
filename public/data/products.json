@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name":"Breville",
+      "price":269,
+      "description":"...",
+      "img":"breville.png"
+    },
+    {
+      "id": 2,
+      "name":"Kups",
+      "price":149,
+      "description":"...",
+      "img":"nesspresso-kups.png"
+    },
+    {
+      "id": 3,
+      "name":"Classic Breville",
+      "price":269,
+      "description":"...",
+      "img":"breville.png"
+    },
+    {
+      "id": 4,
+      "name":"Classic Breville",
+      "price":269,
+      "description":"...",
+      "img":"breville.png"
+    },
+    {
+      "id": 5,
+      "name":"Classic Breville",
+      "price":269,
+      "description":"...",
+      "img":"breville.png"
+    }
+]
