@@ -1,16 +1,20 @@
 import React from "react";
 import "./Product.css";
-import { ProductInterface } from "../../types";
+import { Product as ProductInterface } from "../../types";
 
-const Product = ({
-  id,
-  name,
-  price,
-  description,
-  img,
+interface ProductProps {
+  product: ProductInterface;
+  onAddToCart: (id: number) => void;
+  openProductModal: (id: number) => void;
+}
+
+const Product: React.FC<ProductProps> = ({
+  product,
   onAddToCart,
   openProductModal,
-}: ProductInterface) => {
+}) => {
+  const { id, name, price, img } = product;
+
   return (
     <div
       className="product"
@@ -19,12 +23,12 @@ const Product = ({
       <img src={require("../../assets/img/product/" + img)} alt="" />
       <div className="product-name">{name}</div>
       <div className="product-price">${price}.00</div>
-      <div
+      <button
         className="btn-round"
         onClick={(e) => onAddToCart && onAddToCart(id)}
       >
         +
-      </div>
+      </button>
     </div>
   );
 };

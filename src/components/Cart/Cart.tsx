@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ProductInterface } from "../../types";
+import { Product } from "../../types";
 import "./Cart.css";
 import { BsFillHandbagFill } from "react-icons/bs";
 
 interface CartProps {
-  products?: ProductInterface[];
+  products?: Product[];
 }
 const Cart: React.FC<CartProps> = ({ products }) => {
   let total = 0;

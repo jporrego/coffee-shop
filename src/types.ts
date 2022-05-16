@@ -1,9 +1,7 @@
-export interface ProductInterface {
+export interface Product {
   id: number;
   name: string;
   price: number;
   description: string;
   img: string;
-  onAddToCart?: (id: number) => void;
-  openProductModal?: (id: number) => void;
 }

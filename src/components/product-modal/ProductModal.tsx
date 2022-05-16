@@ -1,23 +1,29 @@
 import React from "react";
 import "./ProductModal.css";
-import { ProductInterface } from "../../types";
+import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface ProductModalProps {
-  product: ProductInterface | undefined;
+  product: Product | undefined;
   onAddToCart: (id: number) => void;
-  closeModal: () => void;
+  setSelectedProduct: React.Dispatch<React.SetStateAction<Product | undefined>>;
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({
   product,
   onAddToCart,
-  closeModal,
+  setSelectedProduct,
 }) => {
+  const handleCloseModal = () => {
+    setSelectedProduct(undefined);
+  };
+
   return (
     <div className="product-modal">
       <div className="nav">
-        <IoMdArrowRoundBack onClick={() => closeModal()}></IoMdArrowRoundBack>
+        <IoMdArrowRoundBack
+          onClick={() => handleCloseModal()}
+        ></IoMdArrowRoundBack>
       </div>
       <img src={require("../../assets/img/product/" + product?.img)} alt="" />
       <div className="product-modal-info">

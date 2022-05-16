@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product renders the product 1`] = `
+<div>
+  <div
+    class="product"
+  >
+    <img
+      alt=""
+      src="breville.png"
+    />
+    <div
+      class="product-name"
+    >
+      Product
+    </div>
+    <div
+      class="product-price"
+    >
+      $
+      10
+      .00
+    </div>
+    <button
+      class="btn-round"
+    >
+      +
+    </button>
+  </div>
+</div>
+`;
