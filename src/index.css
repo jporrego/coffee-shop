@@ -59,30 +59,41 @@ body {
   filter: brightness(1.1);
 }
 
-.btn-square {
+.btn-square--small {
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  padding: .5rem 1rem;
   font-weight: 600;
-
-  padding: .4rem;
+  width: fit-content;
   border-radius: .5rem;
   transition: all 0.15s ease-out;
   cursor: pointer;
   user-select: none;
+}
 
+.btn-square--big {
+  border: none;
+  font-size: 1.8rem;
+  padding: .5rem 1rem;
+  font-weight: 600;
+  width: fit-content;
+  border-radius: .5rem;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  user-select: none;
 }
 
 .btn-square:hover {
-  transform: translateY(1px);
+  transform: translateY(-1px);
 }
 
-.btn--yellow {
-  background-color: var(--yellow);
+.btn--brown {
+  background-color: var(--brown);
   color: var(--white);
 }
 
-.btn--red {
-  background-color: var(--red);
+.btn--brown-light {
+  background-color: var(--brown-light);
   color: var(--white);
 }
 

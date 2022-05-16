@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product list renders the product list 1`] = `
+<div>
+  <div
+    class="product-list"
+  >
+    <div
+      data-testid="product"
+    >
+      Product
+    </div>
+    <div
+      data-testid="product"
+    >
+      Product 2
+    </div>
+  </div>
+</div>
+`;

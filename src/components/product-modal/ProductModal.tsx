@@ -22,6 +22,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
     <div className="product-modal">
       <div className="nav">
         <IoMdArrowRoundBack
+          className="btn-back"
           onClick={() => handleCloseModal()}
         ></IoMdArrowRoundBack>
       </div>
@@ -32,10 +33,10 @@ const ProductModal: React.FC<ProductModalProps> = ({
         <div className="product-modal-description">{product?.description}</div>
         {product && (
           <div
-            className="div"
-            onClick={(e) => onAddToCart && onAddToCart(product.id)}
+            className="btn-square--big btn--brown-light "
+            onClick={(e) => onAddToCart(product.id)}
           >
-            O
+            Add to cart
           </div>
         )}
       </div>
