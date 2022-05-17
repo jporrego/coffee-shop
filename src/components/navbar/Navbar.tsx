@@ -8,12 +8,22 @@ interface NavbarProps {
     path: string;
     text: string;
   }[];
+  cart?: React.ReactNode;
 }
-const Navbar: React.FC<NavbarProps> = ({ paths }) => {
+const Navbar: React.FC<NavbarProps> = ({ paths, cart }) => {
   const renderLinks = () => {
-    return paths.map((link) => <Link to={link.path}>{link.text}</Link>);
+    return paths.map((link) => (
+      <Link key={link.path} to={link.path}>
+        {link.text}
+      </Link>
+    ));
   };
-  return <div className="navbar">{renderLinks()}</div>;
+  return (
+    <div className="navbar">
+      {renderLinks()}
+      {cart && cart}
+    </div>
+  );
 };
 
 export default Navbar;

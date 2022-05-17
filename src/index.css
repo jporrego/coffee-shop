@@ -13,6 +13,7 @@
   --red: #e4544a;
   --grey: #f6f4f5;
   --brown: #ab7d6e;
+  --brown-dark: rgb(131, 56, 34);
   --brown-light: #c48875;
   /* Fonts */
   --font-primary: 'Nunito', sans-serif;
@@ -100,4 +101,15 @@ body {
 .btn--purple {
   background-color: var(--purple);
   color: var(--white);
+}
+
+.btn-back {
+  font-size: 3rem;
+  color: var(--brown);
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+
+.btn-back:hover {
+  transform: scale(1.075);
 }

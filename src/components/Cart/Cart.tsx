@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Product } from "../../types";
 import "./Cart.css";
 import { BsFillHandbagFill } from "react-icons/bs";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface CartProps {
   cartProducts: Product[];
@@ -39,8 +40,33 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
 
   const cartModal = () => {
     return (
-      <div className="cart-modal" onClick={() => setCartVisible(true)}>
-        <div></div>
+      <div className="cart-modal">
+        <div className="cart-modal-nav">
+          <IoMdArrowRoundBack
+            className="btn-back"
+            onClick={() => setCartVisible(true)}
+          ></IoMdArrowRoundBack>
+          <div className="cart-modal-title">My Cart</div>
+        </div>
+        <div className="cart-modal-product-list">
+          {cartProducts.map((product) => (
+            <div className="cart-modal-product">
+              <div className="cart-modal-product-img">
+                <img
+                  src={require("../../assets/img/product/" + product.img)}
+                  alt=""
+                />
+              </div>
+              <div>{product.name}</div>
+              <div>{product.price}</div>
+              <div className="cart-modal-product-buttons">- 1 + Delete</div>
+            </div>
+          ))}
+        </div>
+        <div className="cart-modal-info">
+          <div className="cart-modal-product-amount">3 items</div>
+          <div className="cart-modal-total">${199}.00</div>
+        </div>
       </div>
     );
   };
