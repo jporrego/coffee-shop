@@ -1,12 +1,19 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Shop from "./components/pages/Shop";
+import Home from "./components/pages/home/Home";
+import Shop from "./components/pages/shop/Shop";
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <Shop></Shop>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home></Home>} />
+          <Route path="shop" element={<Shop></Shop>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 

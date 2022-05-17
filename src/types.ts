@@ -5,3 +5,5 @@ export interface Product {
   description: string;
   img: string;
 }
+
+export type StringTouple = [string, string];

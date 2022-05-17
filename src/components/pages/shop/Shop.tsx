@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Shop.css";
-import { Product } from "../../types";
-import Cart from "../cart/Cart";
-import ProductList from "../product-list/ProductList";
-import ProductModal from "../product-modal/ProductModal";
+import { Product } from "../../../types";
+import Cart from "../../cart/Cart";
+import ProductList from "../../product-list/ProductList";
+import ProductModal from "../../product-modal/ProductModal";
+import Navbar from "../../navbar/Navbar";
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -36,8 +37,8 @@ const Shop = () => {
         ></ProductModal>
       ) : (
         <div className="shop">
-          <Cart cartProducts={cartProducts}></Cart>
-          <div className="nav">Navbar</div>
+          {/*<Cart cartProducts={cartProducts}></Cart>*/}
+          <Navbar paths={[{ path: "/", text: "home" }]}></Navbar>
           <div className="shop-title">Coffee Makers</div>
           <ProductList
             setProducts={setProducts}
