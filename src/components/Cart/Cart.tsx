@@ -14,10 +14,19 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
     setScrolling();
   });
 
+  const getProductAmount = () => {
+    let productAmount = 0;
+    cartProducts.length > 0 &&
+      cartProducts.map((product) => (productAmount += product.amount));
+    return productAmount;
+  };
+
   const getTotal = () => {
     let total = 0;
     cartProducts.length > 0 &&
-      cartProducts.map((product) => (total += product.product.price));
+      cartProducts.map(
+        (product) => (total += product.product.price * product.amount)
+      );
     return total;
   };
 
@@ -33,7 +42,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
     return (
       <div className="cart-icon" onClick={() => setCartVisible(false)}>
         <BsFillHandbagFill className="icon"></BsFillHandbagFill>
-        <div className="cart-icon__product-ammount">{cartProducts.length}</div>
+        <div className="cart-icon__product-ammount">{getProductAmount()}</div>
       </div>
     );
   };
@@ -70,7 +79,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
           ))}
         </div>
         <div className="cart-modal-info">
-          <div className="cart-modal-amount">{cartProducts.length} items</div>
+          <div className="cart-modal-amount">{getProductAmount()} items</div>
           <div className="cart-modal-total">${getTotal()}.00</div>
         </div>
       </div>

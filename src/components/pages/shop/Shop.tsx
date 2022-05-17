@@ -36,6 +36,7 @@ const Shop = () => {
   };
 
   const openProductModal = (id: number) => {
+    return;
     const productToAdd = [...products].find((p) => p.id === id);
     if (productToAdd !== undefined) {
       setSelectedProduct(productToAdd);
