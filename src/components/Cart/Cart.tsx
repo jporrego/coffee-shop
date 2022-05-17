@@ -6,28 +6,49 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface CartProps {
   cartProducts: { product: Product; amount: number }[];
+  setCartProducts: React.Dispatch<
+    React.SetStateAction<{ product: Product; amount: number }[]>
+  >;
 }
-const Cart: React.FC<CartProps> = ({ cartProducts }) => {
+const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
   const [cartVisible, setCartVisible] = useState(true);
 
   useEffect(() => {
     setScrolling();
   });
 
-  const getProductAmount = () => {
+  /* ------- Functions ------- */
+
+  const getProductAmount = (): number => {
     let productAmount = 0;
     cartProducts.length > 0 &&
       cartProducts.map((product) => (productAmount += product.amount));
     return productAmount;
   };
 
-  const getTotal = () => {
+  const getTotal = (): number => {
     let total = 0;
     cartProducts.length > 0 &&
       cartProducts.map(
         (product) => (total += product.product.price * product.amount)
       );
     return total;
+  };
+
+  const changeAmount = (id: number, operator: "-" | "+") => {
+    const product = cartProducts.find((p) => p.product.id === id);
+
+    if (product !== undefined) {
+      const index = cartProducts.indexOf(product);
+      const updatedCart = [...cartProducts];
+      if (operator === "+") {
+        updatedCart[index].amount += 1;
+      } else {
+        updatedCart[index].amount -= 1;
+      }
+
+      setCartProducts(updatedCart);
+    }
   };
 
   const setScrolling = () => {
@@ -37,6 +58,8 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
       document.body.style.overflow = "hidden";
     }
   };
+
+  /* ------- Elements ------- */
 
   const cartIcon = () => {
     return (
@@ -73,8 +96,23 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
               <div className="cart-modal-product-price">
                 ${product.product.price}.00
               </div>
-              {product.amount}
-              <div className="cart-modal-product-buttons">- 1 + Delete</div>
+
+              <div className="cart-modal-product-buttons">
+                <div
+                  className="product-amount-btn"
+                  onClick={(e) => changeAmount(product.product.id, "-")}
+                >
+                  -
+                </div>
+                {product.amount}
+                <div
+                  className="product-amount-btn"
+                  onClick={(e) => changeAmount(product.product.id, "+")}
+                >
+                  +
+                </div>
+                Delete
+              </div>
             </div>
           ))}
         </div>

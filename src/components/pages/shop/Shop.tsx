@@ -25,7 +25,6 @@ const Shop = () => {
         const updatedCart = [...cartProducts];
         updatedCart[index].amount += 1;
         setCartProducts(updatedCart);
-        console.log(cartProducts);
       } else {
         setCartProducts([
           ...cartProducts,
@@ -56,7 +55,12 @@ const Shop = () => {
           {/*<Cart cartProducts={cartProducts}></Cart>*/}
           <Navbar
             paths={[{ path: "/", text: "home" }]}
-            cart={<Cart cartProducts={cartProducts}></Cart>}
+            cart={
+              <Cart
+                cartProducts={cartProducts}
+                setCartProducts={setCartProducts}
+              ></Cart>
+            }
           ></Navbar>
           <div className="shop-title">Coffee Makers</div>
           <ProductList
