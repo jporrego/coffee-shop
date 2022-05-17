@@ -19,6 +19,7 @@ const Shop = () => {
   };
 
   const openProductModal = (id: number) => {
+    return;
     const productToAdd = [...products].find((p) => p.id === id);
     if (productToAdd !== undefined) {
       setSelectedProduct(productToAdd);
@@ -35,8 +36,8 @@ const Shop = () => {
         ></ProductModal>
       ) : (
         <div className="shop">
+          <Cart cartProducts={cartProducts}></Cart>
           <div className="nav">Navbar</div>
-          <Cart products={cartProducts}></Cart>
           <div className="shop-title">Coffee Makers</div>
           <ProductList
             setProducts={setProducts}

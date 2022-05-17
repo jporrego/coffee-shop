@@ -1,4 +1,23 @@
+.cart-icon {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+}
+
 .icon {
-    color: var(--blakc);
-    font-size: 3rem;
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.cart-icon__product-ammount {
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 700;
+    right: -.75rem;
+    bottom: -1rem;
+    background-color: var(--red);
+    color: var(--white);
+    line-height: 1;
+    border-radius: 500px;
+    padding: .5rem .85rem;
 }
