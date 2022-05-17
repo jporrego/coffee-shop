@@ -5,7 +5,7 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface CartProps {
-  cartProducts: Product[];
+  cartProducts: { product: Product; amount: number }[];
 }
 const Cart: React.FC<CartProps> = ({ cartProducts }) => {
   const [cartVisible, setCartVisible] = useState(true);
@@ -17,7 +17,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
   const getTotal = () => {
     let total = 0;
     cartProducts.length > 0 &&
-      cartProducts.map((product) => (total += product.price));
+      cartProducts.map((product) => (total += product.product.price));
     return total;
   };
 
@@ -53,14 +53,18 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
             <div className="cart-modal-product">
               <div className="cart-modal-product-img">
                 <img
-                  src={require("../../assets/img/product/" + product.img)}
+                  src={require("../../assets/img/product/" +
+                    product.product.img)}
                   alt=""
                 />
               </div>
-              <div className="cart-modal-product-name">{product.name}</div>
-              <div className="cart-modal-product-price">
-                ${product.price}.00
+              <div className="cart-modal-product-name">
+                {product.product.name}
               </div>
+              <div className="cart-modal-product-price">
+                ${product.product.price}.00
+              </div>
+              {product.amount}
               <div className="cart-modal-product-buttons">- 1 + Delete</div>
             </div>
           ))}

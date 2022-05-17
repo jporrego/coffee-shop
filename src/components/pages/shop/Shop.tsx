@@ -8,14 +8,30 @@ import Navbar from "../../navbar/Navbar";
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+  const [cartProducts, setCartProducts] = useState<
+    { product: Product; amount: number }[]
+  >([]);
 
   const [selectedProduct, setSelectedProduct] = useState<Product>();
 
   const addProductToCart = (id: number) => {
     const productToAdd = [...products].find((p) => p.id === id);
+
     if (productToAdd !== undefined) {
-      setCartProducts([...cartProducts, productToAdd]);
+      const productInCart = cartProducts.find((p) => p.product.id === id);
+
+      if (productInCart !== undefined) {
+        const index = cartProducts.indexOf(productInCart);
+        const updatedCart = [...cartProducts];
+        updatedCart[index].amount += 1;
+        setCartProducts(updatedCart);
+        console.log(cartProducts);
+      } else {
+        setCartProducts([
+          ...cartProducts,
+          { product: productToAdd, amount: 1 },
+        ]);
+      }
     }
   };
 
