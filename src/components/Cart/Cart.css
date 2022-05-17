@@ -38,7 +38,7 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: max-content 1fr 10%;
+    grid-template-rows: max-content 1fr max-content;
 }
 
 .cart-modal-nav {
@@ -46,6 +46,7 @@
     display: flex;
     align-items: center;
     height: 10rem;
+    margin-bottom: 2rem;
     padding: 0rem 2rem;
     justify-content: center;
 }
@@ -73,7 +74,7 @@
 
 .cart-modal-product {
     display: grid;
-    grid-template-columns: 12rem 1fr;
+    grid-template-columns: 11rem 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         'img name'
@@ -90,10 +91,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12rem;
+    height: 11rem;
     border-radius: 2rem;
 }
 
 .cart-modal-product-img img {
+    height: 60%;
+}
+
+.cart-modal-product-name {
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+
+.cart-modal-product-price {
+    color: var(--brown-light);
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+
+.cart-modal-product-buttons {
+    margin-left: 2rem;
+}
+
+.cart-modal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 8rem;
+    background-color: var(--brown);
+    color: white;
+    padding: 1rem 2rem;
+
+    border-radius: 3rem 3rem 0rem 0rem;
+}
+
+.cart-modal-amount {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.cart-modal-total {
+    font-weight: 800;
+    font-size: 2rem;
 }

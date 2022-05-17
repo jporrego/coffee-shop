@@ -57,15 +57,17 @@ const Cart: React.FC<CartProps> = ({ cartProducts }) => {
                   alt=""
                 />
               </div>
-              <div>{product.name}</div>
-              <div>{product.price}</div>
+              <div className="cart-modal-product-name">{product.name}</div>
+              <div className="cart-modal-product-price">
+                ${product.price}.00
+              </div>
               <div className="cart-modal-product-buttons">- 1 + Delete</div>
             </div>
           ))}
         </div>
         <div className="cart-modal-info">
-          <div className="cart-modal-product-amount">3 items</div>
-          <div className="cart-modal-total">${199}.00</div>
+          <div className="cart-modal-amount">{cartProducts.length} items</div>
+          <div className="cart-modal-total">${getTotal()}.00</div>
         </div>
       </div>
     );
