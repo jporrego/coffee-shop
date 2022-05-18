@@ -25,7 +25,10 @@ const Product: React.FC<ProductProps> = ({
       <div className="product-price">${price}.00</div>
       <button
         className="btn-round"
-        onClick={(e) => onAddToCart && onAddToCart(id)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onAddToCart && onAddToCart(id);
+        }}
       >
         +
       </button>

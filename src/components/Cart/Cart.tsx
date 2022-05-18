@@ -5,6 +5,7 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdDeleteOutline } from "react-icons/md";
 import { idText } from "typescript";
+import CartProduct from "./cart-product/CartProduct";
 
 interface CartProps {
   cartProducts: { product: Product; amount: number }[];
@@ -94,43 +95,13 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
           <div className="cart-modal-title">My Cart</div>
         </div>
         <div className="cart-modal-product-list">
-          {/*{cartProducts.map((product) => (
-            <div className="cart-modal-product">
-              <div className="cart-modal-product-img">
-                <img
-                  src={require("../../assets/img/product/" +
-                    product.product.img)}
-                  alt=""
-                />
-              </div>
-              <div className="cart-modal-product-name">
-                {product.product.name}
-              </div>
-              <div className="cart-modal-product-price">
-                ${product.product.price}.00
-              </div>
-
-              <div className="cart-modal-product-buttons">
-                <div
-                  className="product-amount-btn"
-                  onClick={(e) => changeAmount(product.product.id, "-")}
-                >
-                  -
-                </div>
-                <div className="product-amount">{product.amount}</div>
-                <div
-                  className="product-amount-btn"
-                  onClick={(e) => changeAmount(product.product.id, "+")}
-                >
-                  +
-                </div>
-                <MdDeleteOutline
-                  className="delete-icon"
-                  onClick={() => deleteProduct(product.product.id)}
-                ></MdDeleteOutline>
-              </div>
-            </div>
-          ))}*/}
+          {cartProducts.map((product) => (
+            <CartProduct
+              product={product}
+              changeAmount={changeAmount}
+              deleteProduct={deleteProduct}
+            ></CartProduct>
+          ))}
         </div>
         <div className="cart-modal-info">
           <div className="cart-modal-amount">{getProductAmount()} items</div>

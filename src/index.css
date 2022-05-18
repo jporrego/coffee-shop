@@ -84,8 +84,12 @@ body {
   user-select: none;
 }
 
-.btn-square:hover {
+.btn-square--small:hover, .btn-square--big:hover {
   transform: translateY(-1px);
+}
+
+.btn-square--small:active, .btn-square--big:active {
+  transform: translateY(1px);
 }
 
 .btn--brown {
