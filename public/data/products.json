@@ -15,50 +15,61 @@
     },
     {
       "id": 3,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
+      "name":"Keurig K-Duo Coffee Maker",
+      "price":189,
+      "offer": 149, 
+      "description": "The Keurig K-Duo Single Serve & Carafe coffee maker is one of the latest brewer innovations from Keurig. It is a multifunction coffee maker that allows you to brew a single cup using Keurig K-Cup pods and a carafe of coffee using ground coffee.",
+      "img":"keuring-k-duo.png",
+      "category": "coffee machines"
     },
     {
       "id": 4,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
+      "brand":"Mr. Coffee",
+      "name":"Mr. Coffee 12-Cup Coffee Maker",
+      "price":34,
+      "offer": 27, 
+      "description": "Just set it up, turn it on, and brew. There you have it! Rich-tasting coffee expertly brewed for you without the fuss. Grab-A-Cup Auto Pause is a lifesaver when you need a cup before the brew cycle is finished.",
+      "img":"mr-coffee-maker-12-cup.png",
+      "category": "coffee machines"
     },
     {
       "id": 5,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
-    },   {
+      "brand":"Ovalware",
+      "name":"Ovalware RJ3 Cold Brew Coffee Maker",
+      "price":39,
+      "offer": 0, 
+      "description": "Cold brewing is 70% less acidic than hot brewing. And richer in taste. Our cold brewer extracts coffee concentrate which can be stored and mixed with an endless variety of beverages to create your own perfect, personal cup of joy.",
+      "img":"ovalware-rj3.png",
+      "category": "cold brew"
+    },
+    {
       "id": 6,
-      "name":"Kups",
-      "price":149,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"nesspresso-kups.png"
+      "brand":"BTaT",
+      "name":"OBTaT Cold Brew Coffee Maker",
+      "price":20,
+      "offer": 0, 
+      "description": "Smooth, Delicious Cold Brew Coffee And Tea At Home With Our Cold Brew Coffee Maker. Easily Make 1.5 Quart Of Perfect Cold Brew Coffee Or Ice Tea.",
+      "img":"btat.png",
+      "category": "cold brew"
     },
     {
       "id": 7,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
+      "brand":"Stanley",
+      "name":"Stanley Camp Percolator",
+      "price":41,
+      "offer": 36, 
+      "description": " Our stainless-steel percolator coffee pot delivers six cups of hot, fresh coffee at your home or campsite. The interior stainless-steel basket keeps grounds fresh. Enjoy coffee the old-fashioned way, with an improved design.",
+      "img":"stanley-percolator.png",
+      "category": "electric percolator"
     },
     {
       "id": 8,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
-    },
-    {
-      "id": 9,
-      "name":"Classic Breville",
-      "price":269,
-      "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
+      "brand":"Cuisinart",
+      "name":"Cuisinart PRC-12 Classic Percolator",
+      "price":79,
+      "offer": 69, 
+      "description": "Cuisinart brings modern touches to traditional coffee making techniques with the Classic 12 Cup Percolator. This beautiful stainless steel coffee maker percolates hot water through coffee grounds up into the transparent knob on top, creating the familiar sound we all love.",
+      "img":"cuisinart-prc-12.png",
+      "category": "electric percolator"
     }
 ]
