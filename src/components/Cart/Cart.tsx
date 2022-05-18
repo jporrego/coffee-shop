@@ -3,6 +3,8 @@ import { Product } from "../../types";
 import "./Cart.css";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { MdDeleteOutline } from "react-icons/md";
+import { idText } from "typescript";
 
 interface CartProps {
   cartProducts: { product: Product; amount: number }[];
@@ -44,9 +46,20 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
       if (operator === "+") {
         updatedCart[index].amount += 1;
       } else {
-        updatedCart[index].amount -= 1;
+        if (updatedCart[index].amount > 1) {
+          updatedCart[index].amount -= 1;
+        }
       }
 
+      setCartProducts(updatedCart);
+    }
+  };
+
+  const deleteProduct = (id: number) => {
+    const product = cartProducts.find((p) => p.product.id === id);
+
+    if (product !== undefined) {
+      const updatedCart = [...cartProducts].filter((p) => p.product.id !== id);
       setCartProducts(updatedCart);
     }
   };
@@ -81,7 +94,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
           <div className="cart-modal-title">My Cart</div>
         </div>
         <div className="cart-modal-product-list">
-          {cartProducts.map((product) => (
+          {/*{cartProducts.map((product) => (
             <div className="cart-modal-product">
               <div className="cart-modal-product-img">
                 <img
@@ -104,17 +117,20 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
                 >
                   -
                 </div>
-                {product.amount}
+                <div className="product-amount">{product.amount}</div>
                 <div
                   className="product-amount-btn"
                   onClick={(e) => changeAmount(product.product.id, "+")}
                 >
                   +
                 </div>
-                Delete
+                <MdDeleteOutline
+                  className="delete-icon"
+                  onClick={() => deleteProduct(product.product.id)}
+                ></MdDeleteOutline>
               </div>
             </div>
-          ))}
+          ))}*/}
         </div>
         <div className="cart-modal-info">
           <div className="cart-modal-amount">{getProductAmount()} items</div>

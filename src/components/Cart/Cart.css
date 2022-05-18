@@ -121,13 +121,33 @@
 
 .product-amount-btn {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 500px;
     line-height: 1;
     width: 2rem;
     height: 2rem;
     font-weight: 700;
     text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease-out;
+}
+
+.product-amount-btn:hover {
+    background-color: var(--brown-light);
+    color: var(--white);
+}
+
+.delete-icon {
+    font-size: 2.5rem;
+    margin-left: auto;
+    color: var(--brown);
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+
+.delete-icon:hover {
+    color: var(--brown-dark);
 }
 
 .cart-modal-info {
