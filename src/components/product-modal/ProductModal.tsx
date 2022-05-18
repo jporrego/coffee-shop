@@ -26,7 +26,9 @@ const ProductModal: React.FC<ProductModalProps> = ({
           onClick={() => handleCloseModal()}
         ></IoMdArrowRoundBack>
       </div>
-      <img src={require("../../assets/img/product/" + product?.img)} alt="" />
+      <div className="product-modal-img">
+        <img src={require("../../assets/img/product/" + product?.img)} alt="" />
+      </div>
       <div className="product-modal-info">
         <div className="product-modal-name">{product?.name}</div>
         <div className="product-modal-price">${product?.price}.00</div>
