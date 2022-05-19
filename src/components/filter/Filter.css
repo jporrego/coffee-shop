@@ -1,0 +1,42 @@
+.filter {
+    position: relative;
+    width: fit-content;
+    background-color: var(--brown-light);
+    color: var(--white);
+    padding: 1rem 1rem;
+    border-radius: .75rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.filter select {
+    border: none;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-right: 0rem;
+    text-transform: capitalize;
+    background-color: var(--brown-light);
+    color: var(--white);
+    /* pointer-events: none; */
+}
+
+.filter selects {
+    -o-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.filter-icon {
+    display: inline-block;
+    font-size: 2rem;
+
+
+}
+
+.filter-icon svg {
+    display: flex;
+    align-items: center;
+}

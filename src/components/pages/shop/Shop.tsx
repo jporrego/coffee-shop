@@ -5,9 +5,11 @@ import Cart from "../../cart/Cart";
 import ProductList from "../../product-list/ProductList";
 import ProductModal from "../../product-modal/ProductModal";
 import Navbar from "../../navbar/Navbar";
+import FilterContainer from "../../filter-container/FilterContainer";
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [cartProducts, setCartProducts] = useState<
     { product: Product; amount: number }[]
   >([]);
@@ -51,7 +53,6 @@ const Shop = () => {
         ></ProductModal>
       ) : (
         <div className="shop">
-          {/*<Cart cartProducts={cartProducts}></Cart>*/}
           <Navbar
             paths={[{ path: "/", text: "home" }]}
             cart={
@@ -62,9 +63,14 @@ const Shop = () => {
             }
           ></Navbar>
           <div className="shop-title">Coffee Makers</div>
+          <FilterContainer
+            products={products}
+            filteredProducts={filteredProducts}
+            setFilteredProducts={setFilteredProducts}
+          ></FilterContainer>
           <ProductList
             setProducts={setProducts}
-            products={products}
+            products={filteredProducts}
             onAddToCart={addProductToCart}
             openProductModal={openProductModal}
           ></ProductList>{" "}
