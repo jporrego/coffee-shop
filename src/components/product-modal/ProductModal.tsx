@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductModal.css";
 import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -14,8 +14,20 @@ const ProductModal: React.FC<ProductModalProps> = ({
   onAddToCart,
   setSelectedProduct,
 }) => {
+  useEffect(() => {
+    setScrolling();
+  });
+
   const handleCloseModal = () => {
     setSelectedProduct(undefined);
+  };
+
+  const setScrolling = () => {
+    if (setSelectedProduct !== undefined) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
   };
 
   return (

@@ -17,20 +17,21 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
   useEffect(() => {
     setInitialProducts();
-  }, []);
+  }, [products]);
 
   const setInitialProducts = () => {
     setFilteredProducts(products);
   };
 
   const filterProducts = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if ((e.target.value = "all")) {
-      alert(1);
+    if (e.target.value === "all") {
+      setFilteredProducts(products);
+    } else {
+      const filteredProducts = [...products].filter(
+        (product) => product.category === e.target.value
+      );
+      setFilteredProducts(filteredProducts);
     }
-    const filteredProducts = [...products].filter(
-      (product) => product.category === e.target.value
-    );
-    setFilteredProducts(filteredProducts);
   };
   return (
     <div className="filter">

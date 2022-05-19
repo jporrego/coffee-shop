@@ -13,7 +13,6 @@ const Shop = () => {
   const [cartProducts, setCartProducts] = useState<
     { product: Product; amount: number }[]
   >([]);
-
   const [selectedProduct, setSelectedProduct] = useState<Product>();
 
   const addProductToCart = (id: number) => {
@@ -45,36 +44,35 @@ const Shop = () => {
 
   return (
     <div>
-      {selectedProduct ? (
+      <div className="shop">
+        <Navbar
+          paths={[{ path: "/", text: "home" }]}
+          cart={
+            <Cart
+              cartProducts={cartProducts}
+              setCartProducts={setCartProducts}
+            ></Cart>
+          }
+        ></Navbar>
+        <div className="shop-title"></div>
+        <FilterContainer
+          products={products}
+          filteredProducts={filteredProducts}
+          setFilteredProducts={setFilteredProducts}
+        ></FilterContainer>
+        <ProductList
+          setProducts={setProducts}
+          products={filteredProducts}
+          onAddToCart={addProductToCart}
+          openProductModal={openProductModal}
+        ></ProductList>{" "}
+      </div>
+      {selectedProduct && (
         <ProductModal
           product={selectedProduct}
           onAddToCart={addProductToCart}
           setSelectedProduct={setSelectedProduct}
         ></ProductModal>
-      ) : (
-        <div className="shop">
-          <Navbar
-            paths={[{ path: "/", text: "home" }]}
-            cart={
-              <Cart
-                cartProducts={cartProducts}
-                setCartProducts={setCartProducts}
-              ></Cart>
-            }
-          ></Navbar>
-          <div className="shop-title">Coffee Makers</div>
-          <FilterContainer
-            products={products}
-            filteredProducts={filteredProducts}
-            setFilteredProducts={setFilteredProducts}
-          ></FilterContainer>
-          <ProductList
-            setProducts={setProducts}
-            products={filteredProducts}
-            onAddToCart={addProductToCart}
-            openProductModal={openProductModal}
-          ></ProductList>{" "}
-        </div>
       )}
     </div>
   );
