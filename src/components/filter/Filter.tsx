@@ -4,19 +4,22 @@ import { Product } from "../../types";
 import { FaAngleDown } from "react-icons/fa";
 
 interface FilterProps {
-  options: string[];
+  filter: string;
   products: Product[];
   filteredProducts: Product[];
   setFilteredProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 const Filter: React.FC<FilterProps> = ({
-  options,
+  filter,
   products,
   filteredProducts,
   setFilteredProducts,
 }) => {
+  const [options, setOptions] = useState<string[]>([]);
+
   useEffect(() => {
     setInitialProducts();
+    generateOptions();
   }, [products]);
 
   const setInitialProducts = () => {
@@ -33,6 +36,21 @@ const Filter: React.FC<FilterProps> = ({
       setFilteredProducts(filteredProducts);
     }
   };
+
+  const generateOptions = () => {
+    const optionArray: string[] = ["all"];
+    for (const product of products) {
+      if (filter in product) {
+        // @ts-ignore
+        if (!optionArray.includes(product[filter])) {
+          // @ts-ignore
+          optionArray.push(product[filter]);
+        }
+      }
+    }
+    setOptions(optionArray);
+  };
+
   return (
     <div className="filter">
       <select

@@ -17,7 +17,13 @@ const FilterContainer: React.FC<FilterContainerProps> = ({
   return (
     <div className="filter-container">
       <Filter
-        options={["all", "coffee machines", "cold brew", "electric percolator"]}
+        filter={"category"}
+        products={products}
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
+      ></Filter>
+      <Filter
+        filter={"brand"}
         products={products}
         filteredProducts={filteredProducts}
         setFilteredProducts={setFilteredProducts}
