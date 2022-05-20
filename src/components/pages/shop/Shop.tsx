@@ -46,7 +46,7 @@ const Shop = () => {
     <div>
       <div className="shop">
         <Navbar
-          paths={[{ path: "/", text: "home" }]}
+          paths={[{ path: "/coffee-shop", text: "home" }]}
           cart={
             <Cart
               cartProducts={cartProducts}
