@@ -24,7 +24,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
 
   const setScrolling = () => {
     if (setSelectedProduct !== undefined) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "visible";
     } else {
       document.body.style.overflow = "visible";
     }
@@ -39,7 +39,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
         ></IoMdArrowRoundBack>
       </div>
       <div className="product-modal-img">
-        <img src={require("../../assets/img/product/" + product?.img)} alt="" />
+        {/*<img src={require("../../assets/img/product/" + product?.img)} alt="" />*/}
       </div>
       <div className="product-modal-info">
         <div className="product-modal-name">{product?.name}</div>
