@@ -24,7 +24,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
 
   const setScrolling = () => {
     if (setSelectedProduct !== undefined) {
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
