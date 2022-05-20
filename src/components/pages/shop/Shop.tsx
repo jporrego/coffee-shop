@@ -5,7 +5,7 @@ import Cart from "../../cart/Cart";
 import ProductList from "../../product-list/ProductList";
 import ProductModal from "../../product-modal/ProductModal";
 import Navbar from "../../navbar/Navbar";
-import FilterContainer from "../../filter-container/FilterContainer";
+import FilterManager from "../../filter-container/FilterContainer";
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -55,11 +55,11 @@ const Shop = () => {
           }
         ></Navbar>
         <div className="shop-title"></div>
-        <FilterContainer
+        <FilterManager
           products={products}
           filteredProducts={filteredProducts}
           setFilteredProducts={setFilteredProducts}
-        ></FilterContainer>
+        ></FilterManager>
         <ProductList
           setProducts={setProducts}
           products={filteredProducts}

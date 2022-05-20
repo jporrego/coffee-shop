@@ -1,6 +1,7 @@
 .filter {
     position: relative;
     width: fit-content;
+
     background-color: var(--brown-light);
     color: var(--white);
     padding: 1rem 1rem;
@@ -11,6 +12,7 @@
 }
 
 .filter select {
+    width: 15rem;
     border: none;
     font-size: 2rem;
     font-weight: 500;

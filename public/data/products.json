@@ -1,6 +1,7 @@
 [
     {
       "id": 1,
+      "brand":"Breville",
       "name":"Breville",
       "price":269,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
@@ -8,6 +9,7 @@
     },
     {
       "id": 2,
+      "brand":"Kups",
       "name":"Kups",
       "price":149,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
@@ -15,6 +17,7 @@
     },
     {
       "id": 3,
+      "brand":"Keurig",
       "name":"Keurig K-Duo Coffee Maker",
       "price":189,
       "offer": 149, 

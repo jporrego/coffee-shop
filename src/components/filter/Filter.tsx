@@ -22,7 +22,6 @@ const Filter: React.FC<FilterProps> = ({
   const [options, setOptions] = useState<string[]>([]);
 
   useEffect(() => {
-    setInitialProducts();
     generateOptions();
   }, [products]);
 
@@ -77,7 +76,9 @@ const Filter: React.FC<FilterProps> = ({
         }}
       >
         {options.map((option) => (
-          <option value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Product } from "../../types";
 import Filter from "../filter/Filter";
-import "./FilterContainer.css";
+import "./FilterManager.css";
 
-interface FilterContainerProps {
+interface FilterManagerProps {
   products: Product[];
   filteredProducts: Product[];
   setFilteredProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
-const FilterContainer: React.FC<FilterContainerProps> = ({
+const FilterManager: React.FC<FilterManagerProps> = ({
   products,
   filteredProducts,
   setFilteredProducts,
@@ -17,43 +17,26 @@ const FilterContainer: React.FC<FilterContainerProps> = ({
   const [filters, setFilters] = useState<object[]>([]);
 
   useEffect(() => {
-    filterProducts2();
-  }, [filters]);
+    setInitialProducts();
+  }, [products]);
 
-  const filterProducts = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === "all") {
-      setFilteredProducts(products);
-    } else {
-      const filteredArray = [...filteredProducts].filter((product) => {
-        // @ts-ignore
-        if (product[filter] === e.target.value) {
-          return product;
-        }
-      });
-      setFilteredProducts(filteredArray);
-    }
+  const setInitialProducts = () => {
+    setFilteredProducts(products);
   };
 
-  const filterProducts2 = () => {
-    let filteredArray: Product[] = [];
+  useEffect(() => {
+    filterProducts();
+  }, [filters]);
 
-    /*for (const filter of filters) {
-      for (const product of products) {
-        if (
-          // @ts-ignore
-          product[Object.keys(filter)[0]] === filter[Object.keys(filter)[0]]
-        ) {
-          filteredArray.push(product);
-        }
-      }
-    }*/
+  const filterProducts = () => {
+    let filteredArray: Product[] = [];
 
     for (const product of products) {
       let matches = true;
       for (const filter of filters) {
         if (
           // @ts-ignore
-          product[Object.keys(filter)[0]] !== filter[Object.keys(filter)[0]]
+          product[Object.keys(filter)[0]] != filter[Object.keys(filter)[0]]
         ) {
           matches = false;
           break;
@@ -88,4 +71,4 @@ const FilterContainer: React.FC<FilterContainerProps> = ({
   );
 };
 
-export default FilterContainer;
+export default FilterManager;
