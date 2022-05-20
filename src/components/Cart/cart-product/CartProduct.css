@@ -27,14 +27,14 @@
 
 .cart-product-name {
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-left: 2rem;
 }
 
 .cart-product-price {
     color: var(--brown-light);
     font-weight: 500;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-left: 2rem;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .delete-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-left: auto;
     color: var(--brown);
     cursor: pointer;

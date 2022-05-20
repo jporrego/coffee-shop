@@ -20,10 +20,11 @@ const Filter: React.FC<FilterProps> = ({
   setFilters,
 }) => {
   const [options, setOptions] = useState<string[]>([]);
+  const [currentSelection, setCurrentSelection] = useState<string>("all");
 
   useEffect(() => {
     generateOptions();
-  }, [products]);
+  }, [products, filteredProducts]);
 
   const setInitialProducts = () => {
     setFilteredProducts(products);
@@ -50,16 +51,32 @@ const Filter: React.FC<FilterProps> = ({
     } else {
       setFilters([...noEmptyObjects]);
     }
+
+    setCurrentSelection(filterValue);
   };
 
   const generateOptions = () => {
     const optionArray: string[] = ["all"];
-    for (const product of products) {
-      if (filter in product) {
-        // @ts-ignore
-        if (!optionArray.includes(product[filter])) {
+
+    // REWORK THIS TO USE THE FILTERED PRODUCTS AND IMPROVE BEHAVIOR //
+    if (filter === "category") {
+      for (const product of products) {
+        if (filter in product) {
           // @ts-ignore
-          optionArray.push(product[filter]);
+          if (!optionArray.includes(product[filter])) {
+            // @ts-ignore
+            optionArray.push(product[filter]);
+          }
+        }
+      }
+    } else {
+      for (const product of products) {
+        if (filter in product) {
+          // @ts-ignore
+          if (!optionArray.includes(product[filter])) {
+            // @ts-ignore
+            optionArray.push(product[filter]);
+          }
         }
       }
     }

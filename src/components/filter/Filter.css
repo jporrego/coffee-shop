@@ -12,9 +12,9 @@
 }
 
 .filter select {
-    width: 15rem;
+    width: 10rem;
     border: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin-right: 0rem;
     text-transform: capitalize;
