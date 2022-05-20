@@ -30,20 +30,6 @@ const Filter: React.FC<FilterProps> = ({
     setFilteredProducts(products);
   };
 
-  const filterProducts = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === "all") {
-      setFilteredProducts(products);
-    } else {
-      const filteredArray = [...filteredProducts].filter((product) => {
-        // @ts-ignore
-        if (product[filter] === e.target.value) {
-          return product;
-        }
-      });
-      setFilteredProducts(filteredArray);
-    }
-  };
-
   const onChangeFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const filterName = e.target.name;
     const filterValue = e.target.value;
@@ -53,14 +39,18 @@ const Filter: React.FC<FilterProps> = ({
         const newFilters = [...filters];
         // @ts-ignore
         delete newFilters[newFilters.indexOf(f)][filterName];
-
         setFilters(newFilters);
       }
     }
     const noEmptyObjects = [...filters].filter(
       (f) => Object.keys(f).length !== 0
     );
-    setFilters([...noEmptyObjects, { [filterName]: filterValue }]);
+
+    if (filterValue !== "all") {
+      setFilters([...noEmptyObjects, { [filterName]: filterValue }]);
+    } else {
+      setFilters([...noEmptyObjects]);
+    }
   };
 
   const generateOptions = () => {
