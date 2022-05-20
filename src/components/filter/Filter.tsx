@@ -8,12 +8,16 @@ interface FilterProps {
   products: Product[];
   filteredProducts: Product[];
   setFilteredProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+  filters: object[];
+  setFilters: React.Dispatch<React.SetStateAction<object[]>>;
 }
 const Filter: React.FC<FilterProps> = ({
   filter,
   products,
   filteredProducts,
   setFilteredProducts,
+  filters,
+  setFilters,
 }) => {
   const [options, setOptions] = useState<string[]>([]);
 
@@ -30,11 +34,21 @@ const Filter: React.FC<FilterProps> = ({
     if (e.target.value === "all") {
       setFilteredProducts(products);
     } else {
-      const filteredProducts = [...products].filter(
-        (product) => product.category === e.target.value
-      );
-      setFilteredProducts(filteredProducts);
+      const filteredArray = [...filteredProducts].filter((product) => {
+        // @ts-ignore
+        if (product[filter] === e.target.value) {
+          return product;
+        }
+      });
+      setFilteredProducts(filteredArray);
     }
+  };
+
+  const onChangeFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const filterName = e.target.name;
+    const filterValue = e.target.value;
+    setFilters([...filters, { [filterName]: filterValue }]);
+    console.log(1);
   };
 
   const generateOptions = () => {
@@ -54,10 +68,10 @@ const Filter: React.FC<FilterProps> = ({
   return (
     <div className="filter">
       <select
-        name="type"
+        name={filter}
         id="coffee makers"
         onChange={(e) => {
-          filterProducts(e);
+          onChangeFilter(e);
         }}
       >
         {options.map((option) => (
