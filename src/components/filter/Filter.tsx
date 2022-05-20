@@ -47,8 +47,20 @@ const Filter: React.FC<FilterProps> = ({
   const onChangeFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const filterName = e.target.name;
     const filterValue = e.target.value;
-    setFilters([...filters, { [filterName]: filterValue }]);
-    console.log(1);
+
+    for (const f of filters) {
+      if (filterName in f) {
+        const newFilters = [...filters];
+        // @ts-ignore
+        delete newFilters[newFilters.indexOf(f)][filterName];
+
+        setFilters(newFilters);
+      }
+    }
+    const noEmptyObjects = [...filters].filter(
+      (f) => Object.keys(f).length !== 0
+    );
+    setFilters([...noEmptyObjects, { [filterName]: filterValue }]);
   };
 
   const generateOptions = () => {
