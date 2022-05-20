@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/coffee-shop/static/css/main.5dfe76fd.css",
+    "main.js": "/coffee-shop/static/js/main.d799319b.js",
+    "static/media/btat.png": "/coffee-shop/static/media/btat.92a4205efda47ee9b447.png",
+    "static/media/ovalware-rj3.png": "/coffee-shop/static/media/ovalware-rj3.e877602c9f5feb2a5686.png",
+    "static/media/keuring-k-duo.png": "/coffee-shop/static/media/keuring-k-duo.fc4ab4fe6a25fc0df8be.png",
+    "static/media/stanley-percolator.png": "/coffee-shop/static/media/stanley-percolator.717ae3af6bbd8956375d.png",
+    "static/media/mr-coffee-maker-12-cup.png": "/coffee-shop/static/media/mr-coffee-maker-12-cup.740038810227bdcb6b58.png",
+    "static/media/cuisinart-prc-12.png": "/coffee-shop/static/media/cuisinart-prc-12.8b1e79afe5d95b2d405b.png",
+    "static/media/breville.png": "/coffee-shop/static/media/breville.bb0f62f1b693993d21da.png",
+    "static/media/nesspresso-kups.png": "/coffee-shop/static/media/nesspresso-kups.bce3ff330aac2d2b431a.png",
+    "index.html": "/coffee-shop/index.html",
+    "main.5dfe76fd.css.map": "/coffee-shop/static/css/main.5dfe76fd.css.map",
+    "main.d799319b.js.map": "/coffee-shop/static/js/main.d799319b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5dfe76fd.css",
+    "static/js/main.d799319b.js"
+  ]
+}
