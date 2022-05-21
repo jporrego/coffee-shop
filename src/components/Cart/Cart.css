@@ -28,10 +28,13 @@
 /* ------ Modal Styles ------ */
 
 .cart-modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
     width: 100vw;
     background-color: var(--white);
     z-index: 100;
