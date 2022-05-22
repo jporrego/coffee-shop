@@ -34,6 +34,18 @@ const Filter: React.FC<FilterProps> = ({
     const filterName = e.target.name;
     const filterValue = e.target.value;
 
+    if (filterName === "category") {
+      // CHANGE THIS to be controled in FilterContainer,
+      // so we can also set the current selected value of other filters
+      console.log(filterValue);
+      if (filterValue !== "all") {
+        setFilters([{ category: filterValue }]);
+      } else {
+        setFilters([]);
+      }
+      return;
+    }
+
     for (const f of filters) {
       if (filterName in f) {
         const newFilters = [...filters];
@@ -59,6 +71,7 @@ const Filter: React.FC<FilterProps> = ({
     const optionArray: string[] = ["all"];
 
     // First we handle the options for the Category filter, since it will control other filters.
+
     if (filter === "category") {
       for (const product of products) {
         if (filter in product) {
