@@ -58,7 +58,6 @@ const Filter: React.FC<FilterProps> = ({
   const generateOptions = () => {
     const optionArray: string[] = ["all"];
 
-    // REWORK THIS TO USE THE FILTERED PRODUCTS AND IMPROVE BEHAVIOR //
     if (filter === "category") {
       for (const product of products) {
         if (filter in product) {
@@ -70,8 +69,24 @@ const Filter: React.FC<FilterProps> = ({
         }
       }
     } else {
+      // REWORK THIS TO USE THE FILTERED PRODUCTS AND IMPROVE BEHAVIOR //
+      // Get category if it exists
+      let category = "";
+
+      if (filters.length > 0) {
+        for (const f of filters) {
+          if (Object.keys(filters[0])[0] === "category") {
+            // @ts-ignore
+            category = f[Object.keys(filters[0])[0]];
+          }
+        }
+      }
+      console.log(category);
+
       for (const product of products) {
-        if (filter in product) {
+        if (filter in product && category === product["category"]) {
+          if (category !== "") {
+          }
           // @ts-ignore
           if (!optionArray.includes(product[filter])) {
             // @ts-ignore
