@@ -37,12 +37,12 @@ const Filter: React.FC<FilterProps> = ({
     if (filterName === "category") {
       // CHANGE THIS to be controled in FilterContainer,
       // so we can also set the current selected value of other filters
-      console.log(filterValue);
       if (filterValue !== "all") {
         setFilters([{ category: filterValue }]);
       } else {
         setFilters([]);
       }
+      // setCurrentSelection(filterValue);
       return;
     }
 
@@ -63,7 +63,6 @@ const Filter: React.FC<FilterProps> = ({
     } else {
       setFilters([...noEmptyObjects]);
     }
-
     setCurrentSelection(filterValue);
   };
 
@@ -96,8 +95,9 @@ const Filter: React.FC<FilterProps> = ({
           }
         }
       }
-
+      console.log(category);
       for (const product of products) {
+        // We check if filter is a key of product to avoid errors
         if (filter in product) {
           if (category === "" || category === undefined) {
             // @ts-ignore
@@ -105,6 +105,8 @@ const Filter: React.FC<FilterProps> = ({
               // @ts-ignore
               optionArray.push(product[filter]);
             }
+            //  ---------------- HERE HERE HERE HERE HERE HERE ----------------
+            //setCurrentSelection("all");
           } else if (category === product["category"]) {
             // @ts-ignore
             if (!optionArray.includes(product[filter])) {
