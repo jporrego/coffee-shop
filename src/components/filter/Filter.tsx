@@ -58,6 +58,7 @@ const Filter: React.FC<FilterProps> = ({
   const generateOptions = () => {
     const optionArray: string[] = ["all"];
 
+    // First we handle the options for the Category filter, since it will control other filters.
     if (filter === "category") {
       for (const product of products) {
         if (filter in product) {
@@ -69,28 +70,34 @@ const Filter: React.FC<FilterProps> = ({
         }
       }
     } else {
-      // REWORK THIS TO USE THE FILTERED PRODUCTS AND IMPROVE BEHAVIOR //
-      // Get category if it exists
-      let category = "";
+      // For the rest of the filters, if there is a category selected, we only show the options that match the category.
+      // This way the user can't select a filter combination that doesn't lead to any products.
+
+      let category: string | undefined = undefined;
 
       if (filters.length > 0) {
         for (const f of filters) {
-          if (Object.keys(filters[0])[0] === "category") {
+          if (Object.keys(f)[0] === "category") {
             // @ts-ignore
             category = f[Object.keys(filters[0])[0]];
           }
         }
       }
-      console.log(category);
 
       for (const product of products) {
-        if (filter in product && category === product["category"]) {
-          if (category !== "") {
-          }
-          // @ts-ignore
-          if (!optionArray.includes(product[filter])) {
+        if (filter in product) {
+          if (category === "" || category === undefined) {
             // @ts-ignore
-            optionArray.push(product[filter]);
+            if (!optionArray.includes(product[filter])) {
+              // @ts-ignore
+              optionArray.push(product[filter]);
+            }
+          } else if (category === product["category"]) {
+            // @ts-ignore
+            if (!optionArray.includes(product[filter])) {
+              // @ts-ignore
+              optionArray.push(product[filter]);
+            }
           }
         }
       }
