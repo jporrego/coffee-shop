@@ -15,6 +15,7 @@ const FilterManager: React.FC<FilterManagerProps> = ({
   setFilteredProducts,
 }) => {
   const [filters, setFilters] = useState<object[]>([]);
+  const [category, setCategory] = useState<string>("");
 
   useEffect(() => {
     setInitialProducts();
@@ -58,6 +59,8 @@ const FilterManager: React.FC<FilterManagerProps> = ({
         setFilteredProducts={setFilteredProducts}
         filters={filters}
         setFilters={setFilters}
+        category={category}
+        setCategory={setCategory}
       ></Filter>
       <Filter
         filter={"brand"}
@@ -66,6 +69,8 @@ const FilterManager: React.FC<FilterManagerProps> = ({
         setFilteredProducts={setFilteredProducts}
         filters={filters}
         setFilters={setFilters}
+        category={category}
+        setCategory={setCategory}
       ></Filter>
     </div>
   );

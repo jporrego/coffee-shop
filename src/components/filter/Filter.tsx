@@ -10,6 +10,8 @@ interface FilterProps {
   setFilteredProducts: React.Dispatch<React.SetStateAction<Product[]>>;
   filters: object[];
   setFilters: React.Dispatch<React.SetStateAction<object[]>>;
+  category: string;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 const Filter: React.FC<FilterProps> = ({
   filter,
@@ -18,6 +20,8 @@ const Filter: React.FC<FilterProps> = ({
   setFilteredProducts,
   filters,
   setFilters,
+  category,
+  setCategory,
 }) => {
   const [options, setOptions] = useState<string[]>([]);
   const [currentSelection, setCurrentSelection] = useState<string>("all");
@@ -25,6 +29,10 @@ const Filter: React.FC<FilterProps> = ({
   useEffect(() => {
     generateOptions();
   }, [products, filteredProducts]);
+
+  useEffect(() => {
+    resetSelections();
+  }, [category]);
 
   const setInitialProducts = () => {
     setFilteredProducts(products);
@@ -42,7 +50,8 @@ const Filter: React.FC<FilterProps> = ({
       } else {
         setFilters([]);
       }
-      // setCurrentSelection(filterValue);
+      setCurrentSelection(filterValue);
+      setCategory(filterValue);
       return;
     }
 
@@ -120,6 +129,12 @@ const Filter: React.FC<FilterProps> = ({
     setOptions(optionArray);
   };
 
+  const resetSelections = () => {
+    if (filter !== "category") {
+      setCurrentSelection("all");
+    }
+  };
+
   return (
     <div className="filter">
       <select
@@ -128,6 +143,7 @@ const Filter: React.FC<FilterProps> = ({
         onChange={(e) => {
           onChangeFilter(e);
         }}
+        value={currentSelection}
       >
         {options.map((option) => (
           <option key={option} value={option}>
