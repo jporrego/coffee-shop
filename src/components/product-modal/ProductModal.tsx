@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProductModal.css";
 import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -14,6 +14,8 @@ const ProductModal: React.FC<ProductModalProps> = ({
   onAddToCart,
   setSelectedProduct,
 }) => {
+  const [showMessage, setShowMessage] = useState(false);
+
   useEffect(() => {
     setScrolling();
   });
@@ -54,9 +56,15 @@ const ProductModal: React.FC<ProductModalProps> = ({
           {product && (
             <div
               className="btn-square--big btn--brown-light "
-              onClick={(e) => onAddToCart(product.id)}
+              onClick={(e) => {
+                if (!showMessage) {
+                  onAddToCart(product.id);
+                  setShowMessage(true);
+                  setTimeout(() => setShowMessage(false), 1500);
+                }
+              }}
             >
-              Add to cart
+              {showMessage ? "Added to cart" : "Add to cart"}
             </div>
           )}
         </div>
