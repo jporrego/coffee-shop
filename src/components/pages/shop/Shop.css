@@ -6,14 +6,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background-color: var(--white);
 }
 
 .shop-title {
-    font-size: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--black);
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
+    padding: 1rem 0rem 0rem 1.5rem;
 }
 
 .products-section {
@@ -26,7 +30,11 @@
 
 @media only screen and (min-width: 400px) {}
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .shop-title {
+        justify-content: flex-start;
+    }
+}
 
 @media only screen and (min-width: 768px) {}
 
@@ -35,6 +43,11 @@
     .products-section {
         width: 80%;
         padding: 0rem 1.5rem;
+    }
+
+    .shop-title {
+        width: 80%;
+
     }
 }
 

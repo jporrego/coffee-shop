@@ -54,7 +54,7 @@ const Shop = () => {
             ></Cart>
           }
         ></Navbar>
-        <div className="shop-title"></div>
+        <div className="shop-title">Coffee Makers</div>
         <div className="products-section">
           <FilterManager
             products={products}
