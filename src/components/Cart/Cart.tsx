@@ -79,7 +79,9 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
     return (
       <div className="cart-icon" onClick={() => setCartVisible(false)}>
         <BsFillHandbagFill className="icon"></BsFillHandbagFill>
-        <div className="cart-icon__product-ammount">{getProductAmount()}</div>
+        <div className="cart-icon__product-ammount">
+          <div>{getProductAmount()}</div>
+        </div>
       </div>
     );
   };

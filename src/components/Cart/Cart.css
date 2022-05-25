@@ -14,15 +14,20 @@
 
 .cart-icon__product-ammount {
     position: absolute;
-    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
     font-weight: 700;
-    right: -.75rem;
-    bottom: -1rem;
+    right: -.5rem;
+    bottom: -.5rem;
     background-color: var(--red);
     color: var(--white);
     line-height: 1;
     border-radius: 500px;
-    padding: .5rem .8rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    text-align: center;
 }
 
 /* ------ Modal Styles ------ */

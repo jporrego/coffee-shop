@@ -55,9 +55,13 @@ body {
   user-select: none;
 }
 
-.btn-round:hover {
-  filter: brightness(1.1);
+@media (pointer: fine) {
+  .btn-round:hover {
+    filter: brightness(1.1);
+  }
 }
+
+
 
 .btn-square--small {
   border: none;
@@ -83,12 +87,14 @@ body {
   user-select: none;
 }
 
-.btn-square--small:hover, .btn-square--big:hover {
-  transform: translateY(-1px);
-}
+@media (pointer: fine) {
+  .btn-square--small:hover, .btn-square--big:hover {
+    transform: translateY(-1px);
+  }
 
-.btn-square--small:active, .btn-square--big:active {
-  transform: translateY(1px);
+  .btn-square--small:active, .btn-square--big:active {
+    transform: translateY(1px);
+  }
 }
 
 .btn--brown {
@@ -113,6 +119,8 @@ body {
   transition: all 0.15s ease-out;
 }
 
-.btn-back:hover {
-  transform: scale(1.075);
+@media (pointer: fine) {
+  .btn-back:hover {
+    transform: scale(1.075);
+  }
 }

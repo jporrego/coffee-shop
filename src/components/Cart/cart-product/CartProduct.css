@@ -59,10 +59,6 @@
     transition: all 0.1s ease-out;
 }
 
-.product-amount-btn:hover {
-    background-color: var(--brown-light);
-    color: var(--white);
-}
 
 .delete-icon {
     font-size: 2.2rem;
@@ -72,9 +68,17 @@
     transition: all 0.15s ease-out;
 }
 
-.delete-icon:hover {
-    color: var(--brown-dark);
+@media (pointer: fine) {
+    .product-amount-btn:hover {
+        background-color: var(--brown-light);
+        color: var(--white);
+    }
+
+    .delete-icon:hover {
+        color: var(--brown-dark);
+    }
 }
+
 
 @media only screen and (min-width: 400px) {
     .cart-product {
