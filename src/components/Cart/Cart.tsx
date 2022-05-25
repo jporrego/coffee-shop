@@ -87,25 +87,27 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
   const cartModal = () => {
     return (
       <div className="cart-modal">
-        <div className="cart-modal-nav">
-          <IoMdArrowRoundBack
-            className="btn-back"
-            onClick={() => setCartVisible(true)}
-          ></IoMdArrowRoundBack>
-          <div className="cart-modal-title">My Cart</div>
-        </div>
-        <div className="cart-modal-product-list">
-          {cartProducts.map((product) => (
-            <CartProduct
-              product={product}
-              changeAmount={changeAmount}
-              deleteProduct={deleteProduct}
-            ></CartProduct>
-          ))}
-        </div>
-        <div className="cart-modal-info">
-          <div className="cart-modal-amount">{getProductAmount()} items</div>
-          <div className="cart-modal-total">${getTotal()}.00</div>
+        <div className="cart-modal-content">
+          <div className="cart-modal-nav">
+            <IoMdArrowRoundBack
+              className="btn-back"
+              onClick={() => setCartVisible(true)}
+            ></IoMdArrowRoundBack>
+            <div className="cart-modal-title">My Cart</div>
+          </div>
+          <div className="cart-modal-product-list">
+            {cartProducts.map((product) => (
+              <CartProduct
+                product={product}
+                changeAmount={changeAmount}
+                deleteProduct={deleteProduct}
+              ></CartProduct>
+            ))}
+          </div>
+          <div className="cart-modal-info">
+            <div className="cart-modal-amount">{getProductAmount()} items</div>
+            <div className="cart-modal-total">${getTotal()}.00</div>
+          </div>
         </div>
       </div>
     );

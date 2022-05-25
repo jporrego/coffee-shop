@@ -75,3 +75,26 @@
 .delete-icon:hover {
     color: var(--brown-dark);
 }
+
+@media only screen and (min-width: 400px) {
+    .cart-product {
+        max-width: 40rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .delete-icon {
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cart-product-name {
+        font-size: 1.5rem;
+    }
+
+    .cart-product-price {
+        font-size: 1.6rem;
+
+    }
+}

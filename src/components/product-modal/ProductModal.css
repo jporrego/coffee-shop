@@ -108,6 +108,7 @@
     .product-modal__content {
         height: 80%;
         width: 80%;
+        border-radius: 2rem;
     }
 
     .product-modal-info {
@@ -121,7 +122,8 @@
         height: fit-content;
         padding: 4rem 2rem 1rem 2rem;
         background-color: var(--white);
-        border-radius: 0rem 0rem 0rem 0rem;
+        border-radius: 5rem 5rem 2rem 2rem;
+
     }
 
     .product-modal-name {
