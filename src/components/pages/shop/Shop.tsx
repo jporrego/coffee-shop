@@ -43,7 +43,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="testio">
+    <div>
       <div className="shop">
         <Navbar
           paths={[{ path: "/coffee-shop", text: "home" }]}

@@ -1,21 +1,31 @@
 .filter {
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: fit-content;
-    background-color: var(--brown-light);
-    color: var(--white);
+    /* background-color: var(--brown-light);
+    color: var(--white); */
     border-radius: .75rem;
     padding: 1rem 1rem;
-    display: flex;
     gap: .5rem;
     align-items: center;
 }
 
+.filter div {
+    align-self: start;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--brown-dark);
+}
+
 .filter select {
-    width: 10rem;
+    height: 3.5rem;
+    width: 12rem;
+    padding: 0px .5rem;
     border: none;
     font-size: 1.6rem;
     font-weight: 500;
-
+    border-radius: .75rem;
     margin-right: 0rem;
     text-transform: capitalize;
     background-color: var(--brown-light);

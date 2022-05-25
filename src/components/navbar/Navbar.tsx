@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ paths, cart }) => {
   };
   return (
     <div className="navbar">
-      Coffee Makers
+      <h1>Coffee Makers</h1>
       {cart && cart}
     </div>
   );

@@ -137,6 +137,7 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <div className="filter">
+      <div>{filter}</div>
       <select
         name={filter}
         id="coffee makers"

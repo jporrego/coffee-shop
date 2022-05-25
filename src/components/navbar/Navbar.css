@@ -24,3 +24,7 @@
 .navbar a:hover {
     color: var(--brown-dark);
 }
+
+h1 {
+    font-size: 2rem;
+}
