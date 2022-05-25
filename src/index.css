@@ -2,8 +2,6 @@
 
 :root {
   --black: #292124;
-  --grey: #2f3138;
-  --grey-light: #5c5d5f;
   --white: #ffffff;
   --blue: #6530D9;
   --purple-dark: #753FBF;
@@ -11,6 +9,7 @@
   --purple-light: #BF7EAE;
   --yellow: #F2A950;
   --red: #e4544a;
+  --grey-dark: #dfdfdf;
   --grey: #f6f4f5;
   --brown: #ab7d6e;
   --brown-dark: rgb(131, 56, 34);

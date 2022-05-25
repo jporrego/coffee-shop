@@ -55,17 +55,19 @@ const Shop = () => {
           }
         ></Navbar>
         <div className="shop-title"></div>
-        <FilterManager
-          products={products}
-          filteredProducts={filteredProducts}
-          setFilteredProducts={setFilteredProducts}
-        ></FilterManager>
-        <ProductList
-          setProducts={setProducts}
-          products={filteredProducts}
-          onAddToCart={addProductToCart}
-          openProductModal={openProductModal}
-        ></ProductList>{" "}
+        <div className="products-section">
+          <FilterManager
+            products={products}
+            filteredProducts={filteredProducts}
+            setFilteredProducts={setFilteredProducts}
+          ></FilterManager>
+          <ProductList
+            setProducts={setProducts}
+            products={filteredProducts}
+            onAddToCart={addProductToCart}
+            openProductModal={openProductModal}
+          ></ProductList>
+        </div>
       </div>
       {selectedProduct && (
         <ProductModal

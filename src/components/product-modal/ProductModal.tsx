@@ -32,27 +32,34 @@ const ProductModal: React.FC<ProductModalProps> = ({
 
   return (
     <div className="product-modal">
-      <div className="nav">
-        <IoMdArrowRoundBack
-          className="btn-back"
-          onClick={() => handleCloseModal()}
-        ></IoMdArrowRoundBack>
-      </div>
-      <div className="product-modal-img">
-        <img src={require("../../assets/img/product/" + product?.img)} alt="" />
-      </div>
-      <div className="product-modal-info">
-        <div className="product-modal-name">{product?.name}</div>
-        <div className="product-modal-price">${product?.price}.00</div>
-        <div className="product-modal-description">{product?.description}</div>
-        {product && (
-          <div
-            className="btn-square--big btn--brown-light "
-            onClick={(e) => onAddToCart(product.id)}
-          >
-            Add to cart
+      <div className="product-modal__content">
+        <div className="nav">
+          <IoMdArrowRoundBack
+            className="btn-back"
+            onClick={() => handleCloseModal()}
+          ></IoMdArrowRoundBack>
+        </div>
+        <div className="product-modal-img">
+          <img
+            src={require("../../assets/img/product/" + product?.img)}
+            alt=""
+          />
+        </div>
+        <div className="product-modal-info">
+          <div className="product-modal-name">{product?.name}</div>
+          <div className="product-modal-price">${product?.price}.00</div>
+          <div className="product-modal-description">
+            {product?.description}
           </div>
-        )}
+          {product && (
+            <div
+              className="btn-square--big btn--brown-light "
+              onClick={(e) => onAddToCart(product.id)}
+            >
+              Add to cart
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
