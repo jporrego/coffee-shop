@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/coffee-shop/static/css/main.d8c05a9d.css",
-    "main.js": "/coffee-shop/static/js/main.8a98dabd.js",
+    "main.css": "/coffee-shop/static/css/main.f8c175fa.css",
+    "main.js": "/coffee-shop/static/js/main.fabe836f.js",
+    "static/media/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg": "/coffee-shop/static/media/kayleigh-harrington-yhn4okt6ci0-unsplash.66640288e9d3b52ac5d3.jpg",
     "static/media/btat.png": "/coffee-shop/static/media/btat.92a4205efda47ee9b447.png",
     "static/media/ovalware-rj3.png": "/coffee-shop/static/media/ovalware-rj3.e877602c9f5feb2a5686.png",
     "static/media/keuring-k-duo.png": "/coffee-shop/static/media/keuring-k-duo.fc4ab4fe6a25fc0df8be.png",
@@ -11,11 +12,11 @@
     "static/media/breville.png": "/coffee-shop/static/media/breville.bb0f62f1b693993d21da.png",
     "static/media/nesspresso-kups.png": "/coffee-shop/static/media/nesspresso-kups.bce3ff330aac2d2b431a.png",
     "index.html": "/coffee-shop/index.html",
-    "main.d8c05a9d.css.map": "/coffee-shop/static/css/main.d8c05a9d.css.map",
-    "main.8a98dabd.js.map": "/coffee-shop/static/js/main.8a98dabd.js.map"
+    "main.f8c175fa.css.map": "/coffee-shop/static/css/main.f8c175fa.css.map",
+    "main.fabe836f.js.map": "/coffee-shop/static/js/main.fabe836f.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8c05a9d.css",
-    "static/js/main.8a98dabd.js"
+    "static/css/main.f8c175fa.css",
+    "static/js/main.fabe836f.js"
   ]
 }
