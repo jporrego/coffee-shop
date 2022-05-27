@@ -54,19 +54,21 @@ const Shop = () => {
             ></Cart>
           }
         ></Navbar>
-        <div className="shop-title">Coffee Makers</div>
-        <div className="products-section">
-          <FilterManager
-            products={products}
-            filteredProducts={filteredProducts}
-            setFilteredProducts={setFilteredProducts}
-          ></FilterManager>
-          <ProductList
-            setProducts={setProducts}
-            products={filteredProducts}
-            onAddToCart={addProductToCart}
-            openProductModal={openProductModal}
-          ></ProductList>
+        <div className="shop-content">
+          <div className="shop-title">Coffee Makers</div>
+          <div className="products-section">
+            <FilterManager
+              products={products}
+              filteredProducts={filteredProducts}
+              setFilteredProducts={setFilteredProducts}
+            ></FilterManager>
+            <ProductList
+              setProducts={setProducts}
+              products={filteredProducts}
+              onAddToCart={addProductToCart}
+              openProductModal={openProductModal}
+            ></ProductList>
+          </div>
         </div>
       </div>
       {selectedProduct && (
