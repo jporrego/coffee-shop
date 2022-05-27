@@ -6,22 +6,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
     background-color: var(--white);
+    background: url(../../../assets/img/product/mr-coffee-maker-12-cup.png);
 }
 
 .shop-title {
     width: 100%;
+    max-width: var(--product-section-max-width);
     display: flex;
     justify-content: center;
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--black);
+    background-color: var(--white);
     margin: 2rem 0rem 0rem 0rem;
     padding: 1rem 0rem 0rem 1.5rem;
 }
 
 .products-section {
     width: 100%;
+    max-width: var(--product-section-max-width);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +38,11 @@
 @media only screen and (min-width: 600px) {
     .shop-title {
         justify-content: flex-start;
+        padding: 1rem 0rem 0rem 3.5rem;
+    }
+
+    .products-section {
+        padding: 0rem 3.5rem;
     }
 }
 
@@ -42,7 +52,7 @@
 
     .products-section {
         width: 80%;
-        padding: 0rem 1.5rem;
+        padding: 0rem 3.5rem;
     }
 
     .shop-title {

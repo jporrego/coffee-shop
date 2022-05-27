@@ -55,6 +55,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: max-content 1fr max-content;
     background-color: var(--white);
+    z-index: 200;
 }
 
 .cart-modal-nav {
@@ -124,7 +125,8 @@
     .cart-modal-content {
         left: auto;
         right: 0;
-        width: 40vw;
+        width: 35vw;
+        max-width: 43rem;
 
     }
 
