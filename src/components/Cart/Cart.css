@@ -3,8 +3,16 @@
 /* ------ Icon Styles ------ */
 
 .cart-icon {
+    cursor: pointer;
     position: relative;
     margin-right: 2rem;
+    transition: all 0.15s ease-out;
+}
+
+@media (pointer: fine) {
+    .cart-icon:hover {
+        transform: scale(1.05);
+    }
 }
 
 .icon {

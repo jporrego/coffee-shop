@@ -105,8 +105,8 @@
     }
 
     .product-modal__content {
-        height: 80%;
-        width: 80%;
+        height: var(--product-section-max-width);
+        width: var(--product-section-max-width);
         border-radius: 2rem;
     }
 

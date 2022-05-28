@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: stretch;
     min-height: 100vh;
-    background: url(../../../assets/img/background/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg);
+    background: url(../../../assets/img/background/edited.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -42,8 +42,6 @@
     padding: 0rem 1.5rem;
 }
 
-@media only screen and (min-width: 400px) {}
-
 @media only screen and (min-width: 600px) {
     .shop-title {
         justify-content: flex-start;
@@ -65,7 +63,7 @@
         bottom: 0;
         height: 100%;
         width: 100%;
-        backdrop-filter: blur(.7rem) brightness(65%);
+        backdrop-filter: blur(.7rem) brightness(60%);
         z-index: 0;
     }
 
@@ -76,8 +74,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-
-
     .products-section {
         padding: 0rem 3.5rem;
     }
@@ -87,5 +83,3 @@
 
     }
 }
-
-@media only screen and (min-width: 1280px) {}

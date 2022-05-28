@@ -20,6 +20,17 @@
     width: 100%;
 }
 
+
+h1 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 2.2rem;
+    justify-self: start;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+    color: var(--brown-dark);
+}
+
 .navbar-links {
     display: flex;
     gap: 2rem;
@@ -32,28 +43,24 @@
     font-weight: 800;
     text-transform: capitalize;
     color: rgb(110, 110, 110);
+    color: var(--brown-light);
     text-decoration: none;
     transition: all 0.15s ease-out;
 }
 
-.link:hover {
-    color: var(--black);
-}
-
-h1 {
-    font-family: var(--font-secondary);
-    font-weight: 700;
-    font-size: 2.2rem;
-    justify-self: start;
-}
-
 .current {
-    color: var(--black);
+    color: var(--brown-dark);
 }
 
-@media only screen and (min-width: 400px) {}
+@media (pointer: fine) {
+    h1:hover {
+        color: var(--black);
+    }
 
-
+    .link:hover {
+        color: var(--brown-dark);
+    }
+}
 
 @media only screen and (min-width: 600px) {
     h1 {
@@ -76,7 +83,5 @@ h1 {
 
     .link {
         font-size: 2rem;
-
     }
-
 }
