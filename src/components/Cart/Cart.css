@@ -119,6 +119,22 @@
     font-size: 1.6rem;
 }
 
+.cart-modal-empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    align-self: center;
+}
+
+.cart-modal-empty-message svg {
+    font-size: 5rem;
+    color: var(--brown-dark);
+}
+
 @media only screen and (min-width: 600px) {
     .cart-modal-product-list {
         align-items: flex-start;

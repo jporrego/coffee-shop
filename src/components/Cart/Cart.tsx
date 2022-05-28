@@ -5,6 +5,7 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdDeleteOutline } from "react-icons/md";
 import { idText } from "typescript";
+import { SiBuymeacoffee } from "react-icons/si";
 import CartProduct from "./cart-product/CartProduct";
 
 interface CartProps {
@@ -105,6 +106,12 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
                 deleteProduct={deleteProduct}
               ></CartProduct>
             ))}
+            {cartProducts.length === 0 && (
+              <div className="cart-modal-empty-message">
+                <SiBuymeacoffee></SiBuymeacoffee>
+                <div>Your cart is empty</div>
+              </div>
+            )}
           </div>
           <div className="cart-modal-info">
             <div className="cart-modal-amount">{getProductAmount()} items</div>
