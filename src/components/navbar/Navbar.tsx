@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ paths, cart }) => {
   return (
     <div className="navbar">
       <div className="navbar-content">
-        <h1>CaféStore</h1>
+        <h1>CaféShop</h1>
         <div className="navbar-links">
           <a href="#" className="link">
             Home
