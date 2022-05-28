@@ -104,7 +104,6 @@ const Filter: React.FC<FilterProps> = ({
           }
         }
       }
-      console.log(category);
       for (const product of products) {
         // We check if filter is a key of product to avoid errors
         if (filter in product) {
