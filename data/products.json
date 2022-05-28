@@ -5,7 +5,8 @@
       "name":"Breville",
       "price":269,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"breville.png"
+      "img":"breville.png",
+      "category": "coffee machines"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "name":"Kups",
       "price":149,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
-      "img":"nesspresso-kups.png"
+      "img":"nesspresso-kups.png",
+      "category": "coffee machines"
     },
     {
       "id": 3,
@@ -74,5 +76,46 @@
       "description": "Cuisinart brings modern touches to traditional coffee making techniques with the Classic 12 Cup Percolator. This beautiful stainless steel coffee maker percolates hot water through coffee grounds up into the transparent knob on top, creating the familiar sound we all love.",
       "img":"cuisinart-prc-12.png",
       "category": "electric percolator"
+    },
+    {
+      "id": 9,
+      "brand":"Mueller",
+      "name":"Mueller French Press",
+      "price":39,
+      "offer": 29, 
+      "description": "We tested enough mechanisms and filters to make your head spin to tweak and uniquely design our press with a triple layered filter structure to stop the sediment, but let the yummy coffee oils through for a full-bodied delicious brew that will make you a very happy camper.",
+      "img":"mueller-french-press.png",
+      "category": "french press"
+    },
+    {
+      "id": 10,
+      "brand":"Stanley",
+      "name":"Stanley French Press",
+      "price":69,
+      "offer": 62, 
+      "description": "Designed with double vacuum insulation, this French Press not only allows you to make an amazing cup of Joe but you can also keep it hot for up to 4 hours to enjoy as you go.",
+      "img":"stanley-french-press.png",
+      "category": "french press"
+    },
+    {
+      "id": 11,
+      "brand":"BAYKA",
+      "name":"BAYKA French Press",
+      "price":29,
+      "offer": 19, 
+      "description": "As for our coffee fanatics, you now always have your fresh-made coffee at hand, no matter where you are and without standing in line or breaking your bank.",
+      "img":"bakya-french-press.png",
+      "category": "french press"
+    }
+    ,
+    {
+      "id": 12,
+      "brand":"Fellow Clara",
+      "name":"Fellow Clara French Press",
+      "price":135,
+      "offer": 114, 
+      "description": "Clara is in a brewing immersion league of her own; Fine details & upgraded features to this French press makes manual coffee making an experience that is easy and enjoyable.",
+      "img":"fellow-clara-french-press.png",
+      "category": "french press"
     }
 ]
