@@ -19,6 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ paths, cart }) => {
       ));*/
     }
   };
+
   return (
     <div className="navbar">
       <div className="navbar-content">

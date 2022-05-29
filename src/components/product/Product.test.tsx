@@ -40,8 +40,10 @@ describe("product", () => {
         openProductModal={openProductModal}
       />
     );
-    expect(screen.getByText("Product")).toBeInTheDocument();
-    expect(screen.getByText(/10/)).toBeInTheDocument();
+    expect(screen.getByText(product.name)).toBeInTheDocument();
+    expect(
+      screen.getByText(product.price, { exact: false })
+    ).toBeInTheDocument();
   });
 
   it("calls onAddToCart after button click", () => {
