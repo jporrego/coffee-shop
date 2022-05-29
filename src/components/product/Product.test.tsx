@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import Product from "./Product";
 import { Product as ProductInterface } from "../../types";
 
-// setup props
+// Setup props
 const product: ProductInterface = {
   id: 0,
   brand: "Ovalware",
