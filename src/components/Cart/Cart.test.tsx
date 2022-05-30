@@ -29,7 +29,7 @@ const products = [
     product: {
       id: 1,
       brand: "Kups",
-      name: "Kups",
+      name: "Product 1",
       price: 149,
       offer: 0,
       description:
@@ -65,5 +65,21 @@ describe("cart", () => {
     );
     userEvent.click(screen.getByText("3"));
     expect(container).toMatchSnapshot();
+  });
+
+  it("shows empty message in cart modal", () => {
+    const { container } = render(
+      <Cart cartProducts={[]} setCartProducts={setCartProducts}></Cart>
+    );
+    userEvent.click(screen.getByText("0"));
+    expect(screen.getByText("Your cart is empty")).toBeInTheDocument();
+  });
+
+  it("renders all products in cart modal", () => {
+    const { container } = render(
+      <Cart cartProducts={products} setCartProducts={setCartProducts}></Cart>
+    );
+    userEvent.click(screen.getByText("3"));
+    expect(screen.queryAllByText(/product/i, { exact: false }).length).toBe(2);
   });
 });

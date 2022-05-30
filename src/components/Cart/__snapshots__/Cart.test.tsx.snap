@@ -112,7 +112,7 @@ exports[`cart opens the cart modal 1`] = `
             <div
               class="cart-product-name"
             >
-              Kups
+              Product 1
             </div>
             <div
               class="cart-product-price"
