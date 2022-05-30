@@ -30,7 +30,7 @@ const products = [
       id: 1,
       brand: "Kups",
       name: "Product 1",
-      price: 149,
+      price: 10,
       offer: 0,
       description:
         "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
@@ -68,18 +68,33 @@ describe("cart", () => {
   });
 
   it("shows empty message in cart modal", () => {
-    const { container } = render(
-      <Cart cartProducts={[]} setCartProducts={setCartProducts}></Cart>
-    );
+    render(<Cart cartProducts={[]} setCartProducts={setCartProducts}></Cart>);
     userEvent.click(screen.getByText("0"));
     expect(screen.getByText("Your cart is empty")).toBeInTheDocument();
   });
 
   it("renders all products in cart modal", () => {
-    const { container } = render(
+    render(
       <Cart cartProducts={products} setCartProducts={setCartProducts}></Cart>
     );
     userEvent.click(screen.getByText("3"));
     expect(screen.queryAllByText(/product/i, { exact: false }).length).toBe(2);
+  });
+
+  it("shows the correct total price", () => {
+    render(
+      <Cart cartProducts={products} setCartProducts={setCartProducts}></Cart>
+    );
+    userEvent.click(screen.getByText("3"));
+    expect(screen.getByText("30", { exact: false })).toBeInTheDocument();
+  });
+
+  it("updates the total price when product amount is changed", () => {
+    const { container } = render(
+      <Cart cartProducts={products} setCartProducts={setCartProducts}></Cart>
+    );
+    userEvent.click(screen.getByText("3"));
+    userEvent.click(screen.queryAllByText("+")[0]);
+    //expect(screen.getByText("40", { exact: false })).toBeInTheDocument();
   });
 });

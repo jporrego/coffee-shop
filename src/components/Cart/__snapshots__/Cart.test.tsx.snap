@@ -118,7 +118,7 @@ exports[`cart opens the cart modal 1`] = `
               class="cart-product-price"
             >
               $
-              149
+              10
               .00
             </div>
             <div
@@ -173,7 +173,7 @@ exports[`cart opens the cart modal 1`] = `
             class="cart-modal-total"
           >
             $
-            308
+            30
             .00
           </div>
         </div>
