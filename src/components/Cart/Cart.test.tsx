@@ -88,13 +88,4 @@ describe("cart", () => {
     userEvent.click(screen.getByText("3"));
     expect(screen.getByText("30", { exact: false })).toBeInTheDocument();
   });
-
-  it("updates the total price when product amount is changed", () => {
-    const { container } = render(
-      <Cart cartProducts={products} setCartProducts={setCartProducts}></Cart>
-    );
-    userEvent.click(screen.getByText("3"));
-    userEvent.click(screen.queryAllByText("+")[0]);
-    //expect(screen.getByText("40", { exact: false })).toBeInTheDocument();
-  });
 });
