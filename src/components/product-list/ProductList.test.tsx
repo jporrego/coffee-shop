@@ -26,7 +26,7 @@ const products: ProductInterface[] = [
     price: 10,
     img: "breville.png",
     description: "Product description",
-    category: "cold brew",
+    category: { _id: "0", name: "cold brew" },
   },
   {
     _id: "1",
@@ -35,7 +35,7 @@ const products: ProductInterface[] = [
     price: 20,
     img: "nesspresso-kups.png",
     description: "Product 2 description",
-    category: "cold brew",
+    category: { _id: "0", name: "cold brew" },
   },
 ];
 

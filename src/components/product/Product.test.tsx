@@ -12,7 +12,7 @@ const product: ProductInterface = {
   price: 10,
   img: "breville.png",
   description: "Product description",
-  category: "cold brew",
+  category: { _id: "0", name: "cold brew" },
 };
 
 const onAddToCart = jest.fn();

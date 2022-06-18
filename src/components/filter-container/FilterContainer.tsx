@@ -35,9 +35,13 @@ const FilterManager: React.FC<FilterManagerProps> = ({
     for (const product of products) {
       let matches = true;
       for (const filter of filters) {
+        // @ts-ignore
+        console.log(product[Object.keys(filter)].name);
+        // @ts-ignore
+        console.log(filter[Object.keys(filter)]);
         if (
           // @ts-ignore
-          product[Object.keys(filter)[0]] != filter[Object.keys(filter)[0]]
+          product[Object.keys(filter)].name != filter[Object.keys(filter)]
         ) {
           matches = false;
           break;
@@ -48,6 +52,7 @@ const FilterManager: React.FC<FilterManagerProps> = ({
       }
       setFilteredProducts(filteredArray);
     }
+    setFilteredProducts(products);
   };
 
   return (

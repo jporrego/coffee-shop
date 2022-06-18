@@ -1,3 +1,8 @@
+export interface Category {
+  _id: string;
+  name: string;
+}
+
 export interface Product {
   _id: string;
   brand: string;
@@ -5,7 +10,7 @@ export interface Product {
   price: number;
   description: string;
   img: string;
-  category: string;
+  category: Category;
 }
 
 export interface ProductBackup {
