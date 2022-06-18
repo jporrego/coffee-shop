@@ -101,6 +101,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
           <div className="cart-modal-product-list">
             {cartProducts.map((product) => (
               <CartProduct
+                key={product.product._id}
                 product={product}
                 changeAmount={changeAmount}
                 deleteProduct={deleteProduct}

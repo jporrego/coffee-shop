@@ -26,7 +26,7 @@ const Product: React.FC<ProductProps> = ({
     },
   });
   let image = cld.image(img);
-  image.resize(fill().width(80));
+  image.resize(fill().width(150));
 
   return (
     <div
@@ -34,7 +34,6 @@ const Product: React.FC<ProductProps> = ({
       onClick={() => !showMessage && openProductModal(_id)}
     >
       <AdvancedImage cldImg={image} />
-      {/*<img src={require("../../assets/img/product/" + img)} alt="" />*/}
       <div className="product-name">{name}</div>
       <div className="product-price">${price}.00</div>
       <button
