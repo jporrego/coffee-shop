@@ -4,6 +4,7 @@
       "brand":"Breville",
       "name":"Breville",
       "price":269,
+      "offer": 0,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"breville.png",
       "category": "coffee machines"
@@ -13,6 +14,7 @@
       "brand":"Kups",
       "name":"Kups",
       "price":149,
+      "offer": 0,
       "description": "Does not trap essential oils of your coffee in a paper filter, and makes a beautiful slow-brew. Includes a permanent stainless seel mesh filter.",
       "img":"nesspresso-kups.png",
       "category": "coffee machines"
