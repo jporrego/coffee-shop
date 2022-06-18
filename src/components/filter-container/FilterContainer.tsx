@@ -36,15 +36,22 @@ const FilterManager: React.FC<FilterManagerProps> = ({
       let matches = true;
       for (const filter of filters) {
         // @ts-ignore
-        console.log(product[Object.keys(filter)].name);
-        // @ts-ignore
-        console.log(filter[Object.keys(filter)]);
-        if (
-          // @ts-ignore
-          product[Object.keys(filter)].name != filter[Object.keys(filter)]
-        ) {
-          matches = false;
-          break;
+        if ("category" in filter) {
+          if (
+            // @ts-ignore
+            product[Object.keys(filter)].name != filter[Object.keys(filter)]
+          ) {
+            matches = false;
+            break;
+          }
+        } else {
+          if (
+            // @ts-ignore
+            product[Object.keys(filter)] != filter[Object.keys(filter)]
+          ) {
+            matches = false;
+            break;
+          }
         }
       }
       if (matches) {
@@ -52,7 +59,6 @@ const FilterManager: React.FC<FilterManagerProps> = ({
       }
       setFilteredProducts(filteredArray);
     }
-    setFilteredProducts(products);
   };
 
   return (

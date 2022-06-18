@@ -21,16 +21,8 @@ const ProductList: React.FC<ProductListProps> = ({
 
   const getProducts = async () => {
     try {
-      /*
-      const response = await fetch("data/products.json", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });*/
       const response = await fetch("http://localhost:4000/");
       const data = await response.json();
-      console.log(data);
       setProducts(data);
     } catch (error) {
       console.log(error);
