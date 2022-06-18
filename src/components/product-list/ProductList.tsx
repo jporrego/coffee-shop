@@ -25,12 +25,14 @@ const ProductList: React.FC<ProductListProps> = ({
 
   const getProducts = async () => {
     try {
-      setLoading(true);
-      const response = await fetch("http://localhost:4000/");
-      const data = await response.json();
-      setProducts(data);
-      setLoading(false);
-      setErrorMsg("");
+      if (process.env.REACT_APP_API_URL !== undefined) {
+        setLoading(true);
+        const response = await fetch(process.env.REACT_APP_API_URL);
+        const data = await response.json();
+        setProducts(data);
+        setLoading(false);
+        setErrorMsg("");
+      }
     } catch (error) {
       console.log(error);
       setErrorMsg("Failed to connect to the server... trying again...");
@@ -60,6 +62,7 @@ const ProductList: React.FC<ProductListProps> = ({
 
   return (
     <div className="product-list">
+      {process.env.NODE_ENV}
       {loading && (
         <div className="spinner">
           <img src={Spinner} alt="React Logo" />
