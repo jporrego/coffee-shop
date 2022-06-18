@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./Product.css";
 import { Product as ProductInterface } from "../../types";
 
 interface ProductProps {
   product: ProductInterface;
-  onAddToCart: (id: number) => void;
-  openProductModal: (id: number) => void;
+  onAddToCart: (id: string) => void;
+  openProductModal: (id: string) => void;
 }
 
 const Product: React.FC<ProductProps> = ({
@@ -13,22 +16,31 @@ const Product: React.FC<ProductProps> = ({
   onAddToCart,
   openProductModal,
 }) => {
-  const { id, name, price, img } = product;
+  const { _id, name, price, img } = product;
   const [showMessage, setShowMessage] = useState(false);
+
+  // ---- Connection to Cloudinary ----
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dzk0haoio",
+    },
+  });
+  let image = cld.image(img);
+  image.resize(fill().width(150));
 
   return (
     <div
       className="product"
-      onClick={() => !showMessage && openProductModal(id)}
+      onClick={() => !showMessage && openProductModal(_id)}
     >
-      <img src={require("../../assets/img/product/" + img)} alt="" />
+      <AdvancedImage cldImg={image} />
       <div className="product-name">{name}</div>
       <div className="product-price">${price}.00</div>
       <button
         className="btn-round"
         onClick={(e) => {
           e.stopPropagation();
-          onAddToCart(id);
+          onAddToCart(_id);
           setShowMessage(true);
           setTimeout(() => setShowMessage(false), 1500);
         }}

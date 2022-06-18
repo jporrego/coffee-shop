@@ -35,12 +35,23 @@ const FilterManager: React.FC<FilterManagerProps> = ({
     for (const product of products) {
       let matches = true;
       for (const filter of filters) {
-        if (
-          // @ts-ignore
-          product[Object.keys(filter)[0]] != filter[Object.keys(filter)[0]]
-        ) {
-          matches = false;
-          break;
+        // @ts-ignore
+        if ("category" in filter) {
+          if (
+            // @ts-ignore
+            product[Object.keys(filter)].name != filter[Object.keys(filter)]
+          ) {
+            matches = false;
+            break;
+          }
+        } else {
+          if (
+            // @ts-ignore
+            product[Object.keys(filter)] != filter[Object.keys(filter)]
+          ) {
+            matches = false;
+            break;
+          }
         }
       }
       if (matches) {

@@ -1,12 +1,15 @@
 import React from "react";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./CartProduct.css";
 import { MdDeleteOutline } from "react-icons/md";
 import { Product } from "../../../types";
 
 interface CartProductProps {
   product: { product: Product; amount: number };
-  changeAmount: (id: number, operator: "-" | "+") => void;
-  deleteProduct: (id: number) => void;
+  changeAmount: (id: string, operator: "-" | "+") => void;
+  deleteProduct: (id: string) => void;
 }
 
 const CartProduct: React.FC<CartProductProps> = ({
@@ -14,13 +17,22 @@ const CartProduct: React.FC<CartProductProps> = ({
   changeAmount,
   deleteProduct,
 }) => {
-  const { id, name, price, img } = product.product;
+  const { _id, name, price, img } = product.product;
   const { amount } = product;
+
+  // ---- Connection to Cloudinary ----
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dzk0haoio",
+    },
+  });
+  let image = cld.image(product && img);
+  image.resize(fill().width(100));
 
   return (
     <div className="cart-product">
       <div className="cart-product-img">
-        <img src={require("../../../assets/img/product/" + img)} alt="" />
+        <AdvancedImage cldImg={image} />
       </div>
       <div className="cart-product-name">{name}</div>
       <div className="cart-product-price">${price}.00</div>
@@ -28,20 +40,20 @@ const CartProduct: React.FC<CartProductProps> = ({
       <div className="cart-product-buttons">
         <div
           className="product-amount-btn"
-          onClick={(e) => changeAmount(id, "-")}
+          onClick={(e) => changeAmount(_id, "-")}
         >
           -
         </div>
         <div className="product-amount">{amount}</div>
         <div
           className="product-amount-btn"
-          onClick={(e) => changeAmount(id, "+")}
+          onClick={(e) => changeAmount(_id, "+")}
         >
           +
         </div>
         <MdDeleteOutline
           className="delete-icon"
-          onClick={() => deleteProduct(id)}
+          onClick={() => deleteProduct(_id)}
         ></MdDeleteOutline>
       </div>
     </div>

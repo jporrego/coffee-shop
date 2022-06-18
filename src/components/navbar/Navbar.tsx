@@ -25,12 +25,13 @@ const Navbar: React.FC<NavbarProps> = ({ paths, cart }) => {
       <div className="navbar-content">
         <h1>CaféShop</h1>
         <div className="navbar-links">
+          {/*
           <a href="#" className="link">
             Home
           </a>
           <a href="#" className="link current">
             Shop
-          </a>
+  </a>*/}
         </div>
         {cart && cart}
       </div>

@@ -20,24 +20,22 @@ jest.mock(
 // set ProductList props
 const products: ProductInterface[] = [
   {
-    id: 0,
+    _id: "0",
     brand: "Ovalware",
     name: "Product",
     price: 10,
-    offer: 0,
     img: "breville.png",
     description: "Product description",
-    category: "cold brew",
+    category: { _id: "0", name: "cold brew" },
   },
   {
-    id: 1,
+    _id: "1",
     brand: "Ovalware",
     name: "Product 2",
     price: 20,
-    offer: 0,
     img: "nesspresso-kups.png",
     description: "Product 2 description",
-    category: "cold brew",
+    category: { _id: "0", name: "cold brew" },
   },
 ];
 

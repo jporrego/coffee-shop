@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./ProductModal.css";
 import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface ProductModalProps {
   product: Product | undefined;
-  onAddToCart: (id: number) => void;
+  onAddToCart: (id: string) => void;
   setSelectedProduct: React.Dispatch<React.SetStateAction<Product | undefined>>;
 }
 
@@ -19,6 +22,15 @@ const ProductModal: React.FC<ProductModalProps> = ({
   useEffect(() => {
     setScrolling();
   });
+
+  // ---- Connection to Cloudinary ----
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dzk0haoio",
+    },
+  });
+  let image = cld.image(product && product.img);
+  image.resize(fill().width(800));
 
   const handleCloseModal = () => {
     setSelectedProduct(undefined);
@@ -42,10 +54,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
           ></IoMdArrowRoundBack>
         </div>
         <div className="product-modal-img">
-          <img
-            src={require("../../assets/img/product/" + product?.img)}
-            alt=""
-          />
+          <AdvancedImage cldImg={image} />
         </div>
         <div className="product-modal-info">
           <div className="product-modal-name">{product?.name}</div>
@@ -58,7 +67,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
               className="btn-square--big btn--brown-light "
               onClick={(e) => {
                 if (!showMessage) {
-                  onAddToCart(product.id);
+                  onAddToCart(product._id);
                   setShowMessage(true);
                   setTimeout(() => setShowMessage(false), 1500);
                 }

@@ -84,16 +84,15 @@ const Filter: React.FC<FilterProps> = ({
       for (const product of products) {
         if (filter in product) {
           // @ts-ignore
-          if (!optionArray.includes(product[filter])) {
+          if (!optionArray.includes(product.category.name)) {
             // @ts-ignore
-            optionArray.push(product[filter]);
+            optionArray.push(product.category.name);
           }
         }
       }
     } else {
       // For the rest of the filters, if there is a category selected, we only show the options that match the category.
       // This way the user can't select a filter combination that doesn't lead to any products.
-
       let category: string | undefined = undefined;
 
       if (filters.length > 0) {
@@ -109,17 +108,17 @@ const Filter: React.FC<FilterProps> = ({
         if (filter in product) {
           if (category === "" || category === undefined) {
             // @ts-ignore
-            if (!optionArray.includes(product[filter])) {
+            if (!optionArray.includes(product.brand)) {
               // @ts-ignore
-              optionArray.push(product[filter]);
+              optionArray.push(product.brand);
             }
             //  ---------------- HERE HERE HERE HERE HERE HERE ----------------
             //setCurrentSelection("all");
-          } else if (category === product["category"]) {
+          } else if (category === product.category.name) {
             // @ts-ignore
-            if (!optionArray.includes(product[filter])) {
+            if (!optionArray.includes(product.brand)) {
               // @ts-ignore
-              optionArray.push(product[filter]);
+              optionArray.push(product.brand);
             }
           }
         }
