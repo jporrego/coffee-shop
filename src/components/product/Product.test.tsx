@@ -6,11 +6,10 @@ import { Product as ProductInterface } from "../../types";
 
 // Setup props
 const product: ProductInterface = {
-  id: 0,
+  _id: "0",
   brand: "Ovalware",
   name: "Product",
   price: 10,
-  offer: 0,
   img: "breville.png",
   description: "Product description",
   category: "cold brew",

@@ -39,8 +39,8 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
     return total;
   };
 
-  const changeAmount = (id: number, operator: "-" | "+") => {
-    const product = cartProducts.find((p) => p.product.id === id);
+  const changeAmount = (id: string, operator: "-" | "+") => {
+    const product = cartProducts.find((p) => p.product._id === id);
 
     if (product !== undefined) {
       const index = cartProducts.indexOf(product);
@@ -57,11 +57,11 @@ const Cart: React.FC<CartProps> = ({ cartProducts, setCartProducts }) => {
     }
   };
 
-  const deleteProduct = (id: number) => {
-    const product = cartProducts.find((p) => p.product.id === id);
+  const deleteProduct = (id: string) => {
+    const product = cartProducts.find((p) => p.product._id === id);
 
     if (product !== undefined) {
-      const updatedCart = [...cartProducts].filter((p) => p.product.id !== id);
+      const updatedCart = [...cartProducts].filter((p) => p.product._id !== id);
       setCartProducts(updatedCart);
     }
   };

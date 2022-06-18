@@ -5,8 +5,8 @@ import { Product } from "../../../types";
 
 interface CartProductProps {
   product: { product: Product; amount: number };
-  changeAmount: (id: number, operator: "-" | "+") => void;
-  deleteProduct: (id: number) => void;
+  changeAmount: (id: string, operator: "-" | "+") => void;
+  deleteProduct: (id: string) => void;
 }
 
 const CartProduct: React.FC<CartProductProps> = ({
@@ -14,7 +14,7 @@ const CartProduct: React.FC<CartProductProps> = ({
   changeAmount,
   deleteProduct,
 }) => {
-  const { id, name, price, img } = product.product;
+  const { _id, name, price, img } = product.product;
   const { amount } = product;
 
   return (
@@ -28,20 +28,20 @@ const CartProduct: React.FC<CartProductProps> = ({
       <div className="cart-product-buttons">
         <div
           className="product-amount-btn"
-          onClick={(e) => changeAmount(id, "-")}
+          onClick={(e) => changeAmount(_id, "-")}
         >
           -
         </div>
         <div className="product-amount">{amount}</div>
         <div
           className="product-amount-btn"
-          onClick={(e) => changeAmount(id, "+")}
+          onClick={(e) => changeAmount(_id, "+")}
         >
           +
         </div>
         <MdDeleteOutline
           className="delete-icon"
-          onClick={() => deleteProduct(id)}
+          onClick={() => deleteProduct(_id)}
         ></MdDeleteOutline>
       </div>
     </div>

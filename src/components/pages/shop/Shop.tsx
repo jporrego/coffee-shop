@@ -15,11 +15,11 @@ const Shop = () => {
   >([]);
   const [selectedProduct, setSelectedProduct] = useState<Product>();
 
-  const addProductToCart = (id: number) => {
-    const productToAdd = [...products].find((p) => p.id === id);
+  const addProductToCart = (id: string) => {
+    const productToAdd = [...products].find((p) => p._id === id);
 
     if (productToAdd !== undefined) {
-      const productInCart = cartProducts.find((p) => p.product.id === id);
+      const productInCart = cartProducts.find((p) => p.product._id === id);
 
       if (productInCart !== undefined) {
         const index = cartProducts.indexOf(productInCart);
@@ -35,8 +35,8 @@ const Shop = () => {
     }
   };
 
-  const openProductModal = (id: number) => {
-    const productToAdd = [...products].find((p) => p.id === id);
+  const openProductModal = (id: string) => {
+    const productToAdd = [...products].find((p) => p._id === id);
     if (productToAdd !== undefined) {
       setSelectedProduct(productToAdd);
     }
@@ -57,14 +57,15 @@ const Shop = () => {
         <div className="shop-content">
           <div className="shop-title">Coffee Makers</div>
           <div className="products-section">
+            {/*
             <FilterManager
               products={products}
               filteredProducts={filteredProducts}
               setFilteredProducts={setFilteredProducts}
-            ></FilterManager>
+        ></FilterManager>*/}
             <ProductList
               setProducts={setProducts}
-              products={filteredProducts}
+              products={products}
               onAddToCart={addProductToCart}
               openProductModal={openProductModal}
             ></ProductList>

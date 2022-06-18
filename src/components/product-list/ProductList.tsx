@@ -6,8 +6,8 @@ import Product from "../product/Product";
 interface ProductListProps {
   products: ProductInterface[];
   setProducts: React.Dispatch<React.SetStateAction<ProductInterface[]>>;
-  onAddToCart: (id: number) => void;
-  openProductModal: (id: number) => void;
+  onAddToCart: (id: string) => void;
+  openProductModal: (id: string) => void;
 }
 const ProductList: React.FC<ProductListProps> = ({
   products,
@@ -21,13 +21,16 @@ const ProductList: React.FC<ProductListProps> = ({
 
   const getProducts = async () => {
     try {
+      /*
       const response = await fetch("data/products.json", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-      });
+      });*/
+      const response = await fetch("http://localhost:4000/");
       const data = await response.json();
+      console.log(data);
       setProducts(data);
     } catch (error) {
       console.log(error);
@@ -38,7 +41,7 @@ const ProductList: React.FC<ProductListProps> = ({
     <div className="product-list">
       {products.map((product) => (
         <Product
-          key={product.id}
+          key={product._id}
           product={product}
           onAddToCart={onAddToCart}
           openProductModal={openProductModal}

@@ -5,7 +5,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface ProductModalProps {
   product: Product | undefined;
-  onAddToCart: (id: number) => void;
+  onAddToCart: (id: string) => void;
   setSelectedProduct: React.Dispatch<React.SetStateAction<Product | undefined>>;
 }
 
@@ -58,7 +58,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
               className="btn-square--big btn--brown-light "
               onClick={(e) => {
                 if (!showMessage) {
-                  onAddToCart(product.id);
+                  onAddToCart(product._id);
                   setShowMessage(true);
                   setTimeout(() => setShowMessage(false), 1500);
                 }
