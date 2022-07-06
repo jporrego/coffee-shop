@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { AdvancedImage } from "@cloudinary/react";
-import { Cloudinary } from "@cloudinary/url-gen";
-import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./Product.css";
 import { Product as ProductInterface } from "../../types";
 import CloudinaryImg from "../cloudinary_img/CloudinaryImg";

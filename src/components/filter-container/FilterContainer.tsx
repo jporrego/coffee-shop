@@ -47,7 +47,7 @@ const FilterManager: React.FC<FilterManagerProps> = ({
         } else {
           if (
             // @ts-ignore
-            product[Object.keys(filter)] != filter[Object.keys(filter)]
+            product[Object.keys(filter)].name != filter[Object.keys(filter)]
           ) {
             matches = false;
             break;

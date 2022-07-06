@@ -108,17 +108,17 @@ const Filter: React.FC<FilterProps> = ({
         if (filter in product) {
           if (category === "" || category === undefined) {
             // @ts-ignore
-            if (!optionArray.includes(product.brand)) {
+            if (!optionArray.includes(product.brand.name)) {
               // @ts-ignore
-              optionArray.push(product.brand);
+              optionArray.push(product.brand.name);
             }
             //  ---------------- HERE HERE HERE HERE HERE HERE ----------------
             //setCurrentSelection("all");
           } else if (category === product.category.name) {
             // @ts-ignore
-            if (!optionArray.includes(product.brand)) {
+            if (!optionArray.includes(product.brand.name)) {
               // @ts-ignore
-              optionArray.push(product.brand);
+              optionArray.push(product.brand.name);
             }
           }
         }

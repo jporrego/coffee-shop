@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { AdvancedImage } from "@cloudinary/react";
-import { Cloudinary } from "@cloudinary/url-gen";
-import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./ProductModal.css";
 import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -23,15 +20,6 @@ const ProductModal: React.FC<ProductModalProps> = ({
   useEffect(() => {
     setScrolling();
   });
-
-  // ---- Connection to Cloudinary ----
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: "dzk0haoio",
-    },
-  });
-  let image = cld.image(product && product.img);
-  image.resize(fill().width(800));
 
   const handleCloseModal = () => {
     setSelectedProduct(undefined);
