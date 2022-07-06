@@ -21,18 +21,20 @@ jest.mock(
 const products: ProductInterface[] = [
   {
     _id: "0",
-    brand: "Ovalware",
+    brand: { _id: "0", name: "Ovalware" },
     name: "Product",
     price: 10,
+    stock: 5,
     img: "breville.png",
     description: "Product description",
     category: { _id: "0", name: "cold brew" },
   },
   {
     _id: "1",
-    brand: "Ovalware",
+    brand: { _id: "0", name: "Ovalware" },
     name: "Product 2",
     price: 20,
+    stock: 5,
     img: "nesspresso-kups.png",
     description: "Product 2 description",
     category: { _id: "0", name: "cold brew" },

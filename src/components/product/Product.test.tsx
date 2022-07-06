@@ -7,9 +7,10 @@ import { Product as ProductInterface } from "../../types";
 // Setup props
 const product: ProductInterface = {
   _id: "0",
-  brand: "Ovalware",
+  brand: { _id: "0", name: "Ovalware" },
   name: "Product",
   price: 10,
+  stock: 5,
   img: "breville.png",
   description: "Product description",
   category: { _id: "0", name: "cold brew" },

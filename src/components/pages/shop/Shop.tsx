@@ -57,14 +57,14 @@ const Shop = () => {
         <div className="shop-content">
           <div className="shop-title">Coffee Makers</div>
           <div className="products-section">
-            <FilterManager
+            {/*<FilterManager
               products={products}
               filteredProducts={filteredProducts}
               setFilteredProducts={setFilteredProducts}
-            ></FilterManager>
+        ></FilterManager>*/}
             <ProductList
               setProducts={setProducts}
-              products={filteredProducts}
+              products={products}
               onAddToCart={addProductToCart}
               openProductModal={openProductModal}
             ></ProductList>

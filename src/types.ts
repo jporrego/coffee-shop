@@ -3,25 +3,20 @@ export interface Category {
   name: string;
 }
 
-export interface Product {
+export interface Brand {
   _id: string;
-  brand: string;
   name: string;
-  price: number;
-  description: string;
-  img: string;
-  category: Category;
 }
 
-export interface ProductBackup {
-  id: number;
-  brand: string;
+export interface Product {
+  _id: string;
   name: string;
-  price: number;
-  offer: number;
+  category: Category;
+  brand: Brand;
   description: string;
+  price: number;
+  stock: number;
   img: string;
-  category: string;
 }
 
 export type StringTouple = [string, string];

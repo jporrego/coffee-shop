@@ -5,6 +5,7 @@ import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./ProductModal.css";
 import { Product } from "../../types";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import CloudinaryImg from "../cloudinary_img/CloudinaryImg";
 
 interface ProductModalProps {
   product: Product | undefined;
@@ -54,7 +55,10 @@ const ProductModal: React.FC<ProductModalProps> = ({
           ></IoMdArrowRoundBack>
         </div>
         <div className="product-modal-img">
-          <AdvancedImage cldImg={image} />
+          <CloudinaryImg
+            path={product ? product.img : ""}
+            size={800}
+          ></CloudinaryImg>
         </div>
         <div className="product-modal-info">
           <div className="product-modal-name">{product?.name}</div>

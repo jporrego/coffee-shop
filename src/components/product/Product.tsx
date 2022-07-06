@@ -4,6 +4,7 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import "./Product.css";
 import { Product as ProductInterface } from "../../types";
+import CloudinaryImg from "../cloudinary_img/CloudinaryImg";
 
 interface ProductProps {
   product: ProductInterface;
@@ -19,21 +20,12 @@ const Product: React.FC<ProductProps> = ({
   const { _id, name, price, img } = product;
   const [showMessage, setShowMessage] = useState(false);
 
-  // ---- Connection to Cloudinary ----
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: "dzk0haoio",
-    },
-  });
-  let image = cld.image(img);
-  image.resize(fill().width(150));
-
   return (
     <div
       className="product"
       onClick={() => !showMessage && openProductModal(_id)}
     >
-      <AdvancedImage cldImg={image} />
+      <CloudinaryImg path={img} size={150}></CloudinaryImg>
       <div className="product-name">{name}</div>
       <div className="product-price">${price}.00</div>
       <button
