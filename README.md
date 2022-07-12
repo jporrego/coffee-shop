@@ -2,6 +2,8 @@
 
 A Full Stack e-commerce portfolio project. It consists of two **React** sites (a simple **Shop** for clients and an **Admin Dashboard** for managing the inventory and doing CRUD operations) and a **Node Backend**.
 
+![alt-text](https://github.com/jporrego/coffee-shop/blob/main/src/assets/giflight.gif)
+
 ### Shop
 
 - [Live Site](https://jporrego.github.io/coffee-shop/)
@@ -15,8 +17,6 @@ A Full Stack e-commerce portfolio project. It consists of two **React** sites (a
 ### Backend
 
 - [Repo](https://github.com/jporrego/simple-inventory)
-
-![alt-text](https://github.com/jporrego/coffee-shop/blob/main/src/assets/giflight.gif)
 
 ### Notes
 
