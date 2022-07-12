@@ -47,9 +47,11 @@ const ProductList: React.FC<ProductListProps> = ({
       if (process.env.REACT_APP_API_URL !== undefined) {
         try {
           setLoading(true);
+
           const response = await fetch(process.env.REACT_APP_API_URL);
           const data = await response.json();
           setProducts(data);
+
           setLoading(false);
           setErrorMsg("");
           break;
