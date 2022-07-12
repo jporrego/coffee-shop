@@ -20,6 +20,6 @@ A Full Stack e-commerce portfolio project. It consists of two **React** sites (a
 
 ### Notes
 
-- User registration is not implemented to make it easier for everyone to test the website.
+- User registration is not implemented to make it easier for everyone to test the websites.
 - Everytime the backend is started, it runs a script to delete everything from the database and repopulate it with clean information.
 - The backend is hosted on Heroku's free tier, so the products can take around ten seconds to load the first time if the backend has been inactive for a while.
