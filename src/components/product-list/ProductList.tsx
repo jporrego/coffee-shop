@@ -59,7 +59,9 @@ const ProductList: React.FC<ProductListProps> = ({
           console.log(error);
           setLoading(false);
           if (tryToFetch) {
-            setErrorMsg("Failed to connect to the server... trying again...");
+            setErrorMsg(
+              "Starting Heroku server. This can take around 10 seconds..."
+            );
           } else {
             setErrorMsg("Failed to connect to the server.");
           }
@@ -78,7 +80,7 @@ const ProductList: React.FC<ProductListProps> = ({
           <img src={Spinner} alt="React Logo" />
         </div>
       )}
-      {errorMsg}
+      <div className="error-msg">{errorMsg}</div>
       {products.map((product) => (
         <Product
           key={product._id}

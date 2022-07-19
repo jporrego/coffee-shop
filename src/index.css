@@ -127,3 +127,9 @@ body {
     transform: scale(1.075);
   }
 }
+
+.error-msg {
+  font-size: 1.8rem;
+  width: 100%;
+  text-align: center;
+}
