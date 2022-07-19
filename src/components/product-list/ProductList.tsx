@@ -47,7 +47,9 @@ const ProductList: React.FC<ProductListProps> = ({
       if (process.env.REACT_APP_API_URL !== undefined) {
         try {
           setLoading(true);
-
+          setErrorMsg(
+            "Starting Heroku server. This can take around 10 seconds..."
+          );
           const response = await fetch(process.env.REACT_APP_API_URL);
           const data = await response.json();
           setProducts(data);
