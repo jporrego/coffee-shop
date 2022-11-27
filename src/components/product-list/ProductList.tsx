@@ -25,19 +25,24 @@ const ProductList: React.FC<ProductListProps> = ({
 
   const getProducts = async () => {
     /*
-    try {
-      if (process.env.REACT_APP_API_URL !== undefined) {
+    if (process.env.REACT_APP_API_URL !== undefined) {
+      try {
         setLoading(true);
+        setErrorMsg(
+          "Starting Heroku server. This can take around 10 seconds..."
+        );
         const response = await fetch(process.env.REACT_APP_API_URL);
         const data = await response.json();
-        setProducts(data);
         setLoading(false);
         setErrorMsg("");
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+        setErrorMsg("Failed to connect to the server.");
       }
-    } catch (error) {
-      console.log(error);
-      setErrorMsg("Failed to connect to the server... trying again...");
-      setLoading(false);
+    } else {
+      setErrorMsg("Failed to connect to the server.");
     }*/
     let tryToFetch = true;
     setTimeout(() => {
